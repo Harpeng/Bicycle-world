@@ -1,0 +1,17 @@
+.page {
+    @include border-box();
+    @include margin();
+    max-width: $screen-desktop;
+    min-width: $screen-mobile-low;
+    font-family: $fontFamilyPage;
+    background-color: $pageColorMain;
+
+    &__container {
+        @include flex(column);
+        @include margin();
+        width: $percentWidth;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+    }
+}

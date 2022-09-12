@@ -1,0 +1,6 @@
+@mixin grid($grid-type, $args, $row-gap, $column-gap) {
+      display: grid;
+      #{$grid-type}: #{$args};
+      row-gap: $row-gap ;
+      column-gap: $column-gap;
+    }
