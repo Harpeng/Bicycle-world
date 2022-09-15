@@ -7,6 +7,13 @@
 
 @font-face { 
     font-family: 'Inter'; 
+    font-weight: 600; 
+    src: url(../vendor/font/Inter-SemiBold.woff2),
+         url(../vendor/font/Inter-SemiBold.woff);  
+} 
+
+@font-face { 
+    font-family: 'Inter'; 
     font-weight: 500; 
     src: url(../vendor/font/Inter-Medium.woff2), 
          url(../vendor/font/Inter-Medium.woff);  

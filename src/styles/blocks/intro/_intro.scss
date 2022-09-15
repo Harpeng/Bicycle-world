@@ -1,0 +1,93 @@
+.intro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 74px;
+
+
+    &__descriptions {
+        @include flex(column);
+        gap: 50px;
+        @include margin(80px, 0, 0, 0);
+    }
+
+    &__title {
+        @include margin(0, 0);
+        padding: 0;
+        height: $titleHeight;
+        max-width: $titleWidth;
+        width: $percentWidth;
+        font-size: $fontSizeTitle;
+        font-weight: $fontWeightTitle;
+        line-height: $lineHeightTitle;
+        letter-spacing: $letterSpaceTitle;
+        white-space: normal;
+    }
+
+    &__text {
+        @include margin(0, 0);
+        padding: 0;
+        max-width: $titleWidth;
+        width: $percentWidth;
+        font-weight: $fontWeightUtility;
+        font-size: $fontSizeMain;
+        line-height: $lineHeightSecondary;
+        opacity: 0.7;
+    }
+
+    &__button {
+        background-color: $buttonColor;
+        padding: 16px 10px;
+        max-width: $buttonWidth;
+        border-radius: 4px;
+        position: relative;
+        @include border-box();
+        cursor: pointer;
+        @include margin(0, 0, 167px, 0);
+        border: none;
+        text-align: center;
+
+        &:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 50px;
+            background-color: $buttonColorHover;
+            transition: all 1s ease;
+        }
+
+        &:hover:before {
+            width: $percentWidth;
+        }
+    }
+
+    &__button-link {
+        color: $textColorTitleSecondary;
+        z-index: 4;
+        position: relative;
+        font-size: $fontSizeUtility;
+        line-height: $lineHeightMain;
+        font-weight: $fontWeightSecondary;
+        letter-spacing: $letterSpaceUtility;
+    }
+
+    &__bike-block {
+        @include flex();
+        gap: 30px;
+    }
+
+    &__bike-name {
+        @include margin(0, 0, 0, 0);
+        font-size: $fontSizeMain;
+        line-height: $lineHeightMain;
+        font-weight: $fontWeightUtility;
+    }
+
+    &__icon-line {
+        background-image: url('../images/icon_line.svg');
+        width: 132px;
+        height: 2px;
+        align-self: center;
+    }
+}
