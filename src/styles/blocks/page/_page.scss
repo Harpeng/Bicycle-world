@@ -5,6 +5,7 @@
     min-width: $screen-mobile-low;
     font-family: $fontFamilyPage;
     background-color: $pageColorMain;
+    overflow-x: hidden;
 
     &__container {
         @include flex(column);

@@ -338,6 +338,7 @@ template {
   min-width: 320px;
   font-family: "Inter", Arial, sans-serif;
   background-color: #F4F4F4;
+  overflow-x: hidden;
 }
 .page__container {
   display: flex;
@@ -381,26 +382,16 @@ template {
 .header__nav {
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  align-content: stretch;
-  justify-content: flex-start;
-  justify-items: stretch;
-  align-self: auto;
-  justify-self: auto;
+  flex-wrap: wrap;
   gap: 34px;
-}
-.header__li {
-  text-decoration: none;
 }
 .header__link {
   text-decoration: none;
+  cursor: pointer;
   color: #151515;
   font-size: 0.875em;
   line-height: 1.125em;
   font-weight: 500;
-  cursor: pointer;
   position: relative;
 }
 .header__link:hover {
@@ -429,6 +420,7 @@ template {
   box-sizing: border-box;
   width: 100%;
   padding-left: calc(10px + 110 * (100vw - 320px) / 1120);
+  flex: 1 1 auto;
 }
 
 .intro {
@@ -583,4 +575,6 @@ template {
   max-width: 610px;
   width: 100%;
   overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=index.css.map */

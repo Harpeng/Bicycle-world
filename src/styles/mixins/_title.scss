@@ -1,0 +1,12 @@
+@mixin title() {
+    @include margin(0, 0);
+    padding: 0;
+    height: $titleHeight;
+    max-width: $titleWidth;
+    width: $percentWidth;
+    font-size: $fontSizeTitle;
+    font-weight: $fontWeightTitle;
+    line-height: $lineHeightTitle;
+    letter-spacing: $letterSpaceTitle;
+    white-space: normal;
+}

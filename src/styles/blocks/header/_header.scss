@@ -11,22 +11,16 @@
     background-color: $pageColorMain;
 
     &__nav {
-        list-style-type: none;
-        @include flex();
+        @include list-nav();
         gap: 34px;
     }
 
-    &__li {
-        text-decoration: none;
-    }
-
     &__link {
-        text-decoration: none;
+        @include link();
         color: $textColorTitleMain;
         font-size: $fontSizeUtility;
         line-height: $lineHeightMain;
         font-weight: $fontWeightMain;
-        cursor: pointer;
         position: relative;
 
         &:hover {

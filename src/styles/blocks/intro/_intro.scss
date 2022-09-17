@@ -11,27 +11,11 @@
     }
 
     &__title {
-        @include margin(0, 0);
-        padding: 0;
-        height: $titleHeight;
-        max-width: $titleWidth;
-        width: $percentWidth;
-        font-size: $fontSizeTitle;
-        font-weight: $fontWeightTitle;
-        line-height: $lineHeightTitle;
-        letter-spacing: $letterSpaceTitle;
-        white-space: normal;
+        @include title();
     }
 
     &__text {
-        @include margin(0, 0);
-        padding: 0;
-        max-width: $titleWidth;
-        width: $percentWidth;
-        font-weight: $fontWeightUtility;
-        font-size: $fontSizeMain;
-        line-height: $lineHeightSecondary;
-        opacity: 0.7;
+        @include text();
     }
 
     &__button {
@@ -96,7 +80,7 @@
     }
 
     &__bike-container {
-        box-sizing: border-box;
+        @include border-box();
         height: 100%;
         max-height: 352.26px;
         max-width: 440px;
@@ -121,8 +105,7 @@
         background-repeat: no-repeat;
         object-fit: cover;
         z-index: 2;
-        box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-        border-radius: 20px;
+        @include bike-container();
     }
 
     &__main-img {
@@ -132,5 +115,6 @@
         max-width: 610px;
         width: $percentWidth;
         overflow: hidden;
+        object-fit: cover;
     }
 }
