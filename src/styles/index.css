@@ -455,7 +455,7 @@ template {
   width: 100%;
   font-size: 3.4375em;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.1em;
   letter-spacing: -0.5px;
   white-space: normal;
 }
@@ -542,12 +542,12 @@ template {
 .intro__bike-container {
   box-sizing: border-box;
   height: 100%;
-  max-height: 352.26px;
+  max-height: 430px;
   max-width: 440px;
   position: relative;
   background-color: #F4F4F4;
   margin-right: calc(10px + 490 * (100vw - 320px) / 1120);
-  margin-top: 339.74px;
+  margin-top: 347px;
 }
 .intro__bike-fix {
   position: -webkit-sticky;
@@ -555,7 +555,7 @@ template {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  top: 0;
+  top: 250px;
   max-width: 340px;
   width: 100%;
   padding: 20px 50px;
@@ -577,4 +577,74 @@ template {
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.merks {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 329px 0 60px 0;
+  width: 100%;
+}
+.merks__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+  gap: 80px;
+  width: 100%;
+}
+.merks__img {
+  width: 100%;
+  max-width: 650px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.merks__quote-block {
+  max-width: 470px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: space-between;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+}
+.merks__quote {
+  margin: 0;
+  font-size: 2.125em;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: -0.5px;
+}
+.merks__author-block {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+}
+.merks__name {
+  margin: 0 0 6px 0;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 2em;
+}
+.merks__profession {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.75;
+  opacity: 0.7;
 }/*# sourceMappingURL=index.css.map */

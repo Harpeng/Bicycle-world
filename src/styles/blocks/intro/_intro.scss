@@ -82,12 +82,12 @@
     &__bike-container {
         @include border-box();
         height: 100%;
-        max-height: 352.26px;
+        max-height: 430px;
         max-width: 440px;
         position: relative;
         background-color: #F4F4F4;
         margin-right: calc(10px + (500 - 10) * ((100vw - 320px) / (1440 - 320)));
-        margin-top: 339.74px;
+        margin-top: 347px;
     }
 
     &__bike-fix {
@@ -96,7 +96,7 @@
         position: -ms-sticky;
         position: -o-sticky;
         position: sticky;
-        top: 0;
+        top: 250px;
         max-width: calc(440px - 100px);
         width: $percentWidth;
         padding: 20px 50px;

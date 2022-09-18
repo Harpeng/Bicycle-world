@@ -1,0 +1,51 @@
+.merks {
+    width: $percentWidth;
+    box-sizing: border-box;
+    padding: 329px 0 60px 0;
+    width: $percentWidth;
+
+    &__container {
+        @include flex();
+        gap: 80px;
+        width: 100%;
+    }
+
+    &__img {
+        width: $percentWidth;
+        max-width: 650px;
+        object-fit: cover;
+    }
+
+    &__quote-block {
+        max-width: 470px;
+        @include flex(column, wrap, space-between);
+    }
+
+    &__quote {
+        margin: 0;
+        font-size: $fontSizeSecondary;
+        font-weight: $fontWeightSecondary;
+        line-height: 44px;
+        letter-spacing: $letterSpaceTitle;
+    }
+
+    &__author-block {
+        margin: 0;
+        @include flex(column, wrap)
+    }
+
+    &__name {
+        margin: 0 0 6px 0;
+        font-size: $fonSizeAuthor;
+        font-weight: $fontWeightMain;
+        line-height: $lineHeightAuthor;
+    }
+
+    &__profession {
+        margin: 0;
+        font-size: $fontSizeProff;
+        font-weight: $fontWeightUtility;
+        line-height: $lineHeightSecondary;
+        opacity: 0.7;
+    }
+}
