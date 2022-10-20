@@ -450,7 +450,6 @@ template {
   margin-bottom: 0;
   margin-right: auto;
   padding: 0;
-  height: 120px;
   max-width: 460px;
   width: 100%;
   font-size: 3.4375em;
@@ -647,4 +646,110 @@ template {
   font-weight: 400;
   line-height: 1.75;
   opacity: 0.7;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+}
+.cover__slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+}
+.cover__slide {
+  margin-right: 40px;
+  position: relative;
+  max-width: 650px;
+  width: 100%;
+}
+.cover__title {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  padding: 0;
+  max-width: 460px;
+  width: 100%;
+  font-size: 3.4375em;
+  font-weight: 700;
+  line-height: 1.1em;
+  letter-spacing: -0.5px;
+  white-space: normal;
+  max-height: 60px;
+  margin-bottom: 50px;
+  padding-top: 60px;
+}
+.cover__text {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  padding: 0;
+  max-width: 460px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1.125em;
+  line-height: 1.75;
+  opacity: 0.7;
+}
+.cover__img {
+  margin-top: 80px;
+  max-width: 650px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.cover__icon {
+  padding: 12px 34px 12px 16px;
+  background-color: #24B47E;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  z-index: 5;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cover__icon_svg_winding {
+  background-image: url(../images/icon__road-winding.svg);
+}
+.cover__icon_svg_country {
+  background-image: url(../images/icon__road-country.svg);
+}
+.cover__icon_svg_smooth {
+  background-image: url(../images/icon__road-smooth.svg);
+}
+.cover__is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.cover__button-block {
+  margin-bottom: 60px;
+}
+.cover__button {
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  background-color: #EBEBEB;
+  padding: 0;
+  cursor: pointer;
+}
+.cover__button_strelka_left {
+  background-image: url(../images/icon__strelka-left.svg);
+  margin-right: 20px;
+}
+.cover__button_strelka_right {
+  background-image: url(../images/icon__strelka-right.svg);
 }/*# sourceMappingURL=index.css.map */

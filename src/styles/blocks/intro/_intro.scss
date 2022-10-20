@@ -112,7 +112,7 @@
         position: absolute;
         top: 20px;
         right: 0;
-        max-width: 610px;
+        max-width: $imgLongSize;
         width: $percentWidth;
         overflow: hidden;
         object-fit: cover;

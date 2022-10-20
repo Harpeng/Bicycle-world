@@ -1,0 +1,91 @@
+.cover {
+    @include flex(column);
+
+    &__slider {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 50px;
+    }
+
+    &__slide {
+        margin-right: 40px;
+        position: relative;
+        max-width: $imgPrimarySize;
+        width: $percentWidth;
+    }
+
+    &__title {
+       @include title();
+       max-height: 60px;
+       margin-bottom: 50px;
+       padding-top: 60px;
+    }
+
+    &__text {
+        @include text();
+    }
+
+    &__img {
+        margin-top: 80px;
+        max-width: $imgPrimarySize;
+        width: $percentWidth;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__icon {
+        padding: 12px 34px 12px 16px;
+        background-color: $buttonColor;
+        position: absolute;
+        bottom: 16px;
+        left: 0;
+        z-index: 5;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &_svg_winding {
+            background-image: url(../images/icon__road-winding.svg);
+        }
+
+        &_svg_country {
+            background-image: url(../images/icon__road-country.svg);
+        }
+
+        &_svg_smooth {
+            background-image: url(../images/icon__road-smooth.svg);
+        }
+    }
+
+    &__is-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__button-block {
+        margin-bottom: 60px;
+    }
+
+    &__button {
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        border: none;
+        width: 50px;
+        height: 50px;
+        background-color: $borderColorStrelka;
+        padding: 0;
+        cursor: pointer;
+
+        &_strelka_left {
+            background-image: url(../images/icon__strelka-left.svg);
+            margin-right: 20px;
+        }
+
+        &_strelka_right {
+            background-image: url(../images/icon__strelka-right.svg);
+        }
+    }
+
+
+}

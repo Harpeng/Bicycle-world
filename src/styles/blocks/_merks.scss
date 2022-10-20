@@ -12,7 +12,7 @@
 
     &__img {
         width: $percentWidth;
-        max-width: 650px;
+        max-width: $imgPrimarySize;
         object-fit: cover;
     }
 
