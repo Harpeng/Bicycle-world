@@ -1,0 +1,135 @@
+<section class="cover swiper-container">
+          <div class="cover__slider swiper-wrapper">
+            <div class="cover__slide swiper-slide">
+              <h2 class="cover__title">Шоссе</h2>
+              <p class="cover__text">
+                На шоссейном велосипеде можно ездить по асфальту на разных
+                градиентах: будь то горы или равнины. Гонки проходят в командном
+                пелотоне, но тренироваться можно и самостоятельно.
+              </p>
+              <img
+                src="./images/image__road-winding.png"
+                alt="Картинка шоссе"
+                class="cover__img"
+              />
+              <div class="cover__icon cover__icon_svg_winding"></div>
+            </div>
+            <div class="cover__slide swiper-slide">
+              <h2 class="cover__title cover__is-hidden">Грэвел</h2>
+              <p class="cover__text cover__is-hidden">
+                Грэвел похож на шоссейный велосипед, но конструкция рамы немного
+                отличается, и на нём стоят более широкие покрышки, всё для того
+                чтобы проехать по лёгкому бездорожью.
+              </p>
+              <img
+                src="./images/image__road-country.png"
+                alt="Картинка просёлочной дороги"
+                class="cover__img"
+              />
+              <div class="cover__icon cover__icon_svg_country"></div>
+            </div>
+            <div class="cover__slide swiper-slide">
+              <h2 class="cover__title cover__is-hidden">ТТ</h2>
+              <p class="cover__text cover__is-hidden">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком велике только по равнинному асфальту, велик очень быстрые и аэродинамичный.</p>
+              <img src="./images/image__road-smooth.png" alt="Картинка прямой дороги" class="cover__img cover__is-hidden" />
+              <div class="cover__icon cover__icon_svg_smooth cover__is-hidden"></div>
+            </div>
+          </div>
+          <div class="cover__button-block">
+            <button class="cover__button cover__button_strelka_left"></button>
+            <button class="cover__button cover__button_strelka_right"></button>
+          </div>
+        </section>
+
+        .cover {
+            @include flex(column);
+            min-width: 0;
+            
+            &__slider {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin-bottom: 50px;
+            }
+        
+            &__slide {
+                margin-right: 40px;
+                position: relative;
+                max-width: $imgPrimarySize;
+                width: $percentWidth;
+            }
+        
+            &__title {
+               @include title();
+               max-height: 60px;
+               margin-bottom: 50px;
+               padding-top: 60px;
+            }
+        
+            &__text {
+                @include text();
+            }
+        
+            &__img {
+                margin-top: 80px;
+                max-width: $imgPrimarySize;
+                width: $percentWidth;
+                object-fit: cover;
+                z-index: -1;
+            }
+        
+            &__icon {
+                padding: 12px 34px 12px 16px;
+                background-color: $buttonColor;
+                position: absolute;
+                bottom: 16px;
+                left: 0;
+                z-index: 5;
+                background-position: center;
+                background-repeat: no-repeat;
+        
+                &_svg_winding {
+                    background-image: url(../images/icon__road-winding.svg);
+                }
+        
+                &_svg_country {
+                    background-image: url(../images/icon__road-country.svg);
+                }
+        
+                &_svg_smooth {
+                    background-image: url(../images/icon__road-smooth.svg);
+                }
+            }
+        
+            &__is-hidden {
+                visibility: hidden;
+                opacity: 0;
+            }
+        
+            &__button-block {
+                margin-bottom: 60px;
+            }
+        
+            &__button {
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 50px;
+                border: none;
+                width: 50px;
+                height: 50px;
+                background-color: $borderColorStrelka;
+                padding: 0;
+                cursor: pointer;
+        
+                &_strelka_left {
+                    background-image: url(../images/icon__strelka-left.svg);
+                    margin-right: 20px;
+                }
+        
+                &_strelka_right {
+                    background-image: url(../images/icon__strelka-right.svg);
+                }
+            }
+        
+        
+        }

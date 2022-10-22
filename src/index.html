@@ -13,9 +13,9 @@
     <title>Bycycle-World</title>
     <link rel="stylesheet" href="./styles/index.css" />
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
   </head>
   <body class="page">
     <div class="page__container">
@@ -85,52 +85,75 @@
             </div>
           </div>
         </section>
-        <section class="cover swiper-container">
-          <div class="cover__slider swiper-wrapper">
-            <div class="cover__slide swiper-slide">
-              <h2 class="cover__title">Шоссе</h2>
-              <p class="cover__text">
-                На шоссейном велосипеде можно ездить по асфальту на разных
-                градиентах: будь то горы или равнины. Гонки проходят в командном
-                пелотоне, но тренироваться можно и самостоятельно.
-              </p>
-              <img
-                src="./images/image__road-winding.png"
-                alt="Картинка шоссе"
-                class="cover__img"
-              />
-              <div class="cover__icon cover__icon_svg_winding"></div>
+        <section class="cover">
+          <div class="cover__container-text swiper-container">
+            <ul class="cover__wrapper-text swiper-wrapper">
+              <li class="cover__slider-description swiper-slide">
+                <h2 class="cover__title">Шоссе</h2>
+                <p class="cover__text">
+                  На шоссейном велосипеде можно ездить по асфальту на разных
+                  градиентах: будь то горы или равнины. Гонки проходят в
+                  командном пелотоне, но тренироваться можно и самостоятельно.
+                </p>
+              </li>
+              <li class="cover__slider-description swiper-slide">
+                <h2 class="cover__title">Грэвел</h2>
+                <p class="cover__text">
+                  Грэвел похож на шоссейный велосипед, но конструкция рамы
+                  немного отличается, и на нём стоят более широкие покрышки, всё
+                  для того чтобы проехать по лёгкому бездорожью.
+                </p>
+              </li>
+              <li class="cover__slider-description swiper-slide">
+                <h2 class="cover__title">ТТ</h2>
+                <p class="cover__text">
+                  ТТ — это велосипед для триатлона или раздельного старта,
+                  гооняют на таком велике только по равнинному асфальту, велик
+                  очень быстрые и аэродинамичный.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="cover__img-block">
+            <div class="cover__container-img swiper-container">
+              <div class="cover__slider-img swiper-wrapper">
+                <img
+                  src="./images/image__road-winding.png"
+                  alt="Картинка шоссе"
+                  class="cover__img swiper-slide"
+                />
+                <img
+                  src="./images/image__road-country.png"
+                  alt="Картинка просёлочной дороги"
+                  class="cover__img swiper-slide"
+                />
+                <img
+                  src="./images/image__road-smooth.png"
+                  alt="Картинка прямой дороги"
+                  class="cover__img swiper-slide"
+                />
+              </div>
             </div>
-            <div class="cover__slide swiper-slide">
-              <h2 class="cover__title cover__is-hidden">Грэвел</h2>
-              <p class="cover__text cover__is-hidden">
-                Грэвел похож на шоссейный велосипед, но конструкция рамы немного
-                отличается, и на нём стоят более широкие покрышки, всё для того
-                чтобы проехать по лёгкому бездорожью.
-              </p>
-              <img
-                src="./images/image__road-country.png"
-                alt="Картинка просёлочной дороги"
-                class="cover__img"
-              />
-              <div class="cover__icon cover__icon_svg_country"></div>
-            </div>
-            <div class="cover__slide swiper-slide">
-              <h2 class="cover__title cover__is-hidden">ТТ</h2>
-              <p class="cover__text cover__is-hidden">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком велике только по равнинному асфальту, велик очень быстрые и аэродинамичный.</p>
-              <img src="./images/image__road-smooth.png" alt="Картинка прямой дороги" class="cover__img cover__is-hidden" />
-              <div class="cover__icon cover__icon_svg_smooth cover__is-hidden"></div>
+            <div class="cover__container-icon swiper-container">
+              <ul class="cover__slider-icon swiper-wrapper">
+                <li class="cover__icon-winding swiper-slide"></li>
+                <li class="cover__icon-country swiper-slide"></li>
+                <li class="cover__icon-smooth swiper-slide"></li>
+              </ul>
             </div>
           </div>
           <div class="cover__button-block">
-            <button class="cover__button cover__button_strelka_left"></button>
-            <button class="cover__button cover__button_strelka_right"></button>
+            <button
+              class="cover__button cover__button_strelka_left"
+            ></button>
+            <button
+              class="cover__button cover__button_strelka_right"
+            ></button>
           </div>
         </section>
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./components/utils/slider.js"></script>
-  </body>
+    <script src="./components/slider.js"></script>
   </body>
 </html>
