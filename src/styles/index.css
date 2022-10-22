@@ -658,6 +658,7 @@ template {
   justify-items: stretch;
   align-self: auto;
   justify-self: auto;
+  min-width: 0;
 }
 .cover__slider {
   display: flex;

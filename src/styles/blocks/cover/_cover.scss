@@ -1,5 +1,6 @@
 .cover {
     @include flex(column);
+    min-width: 0;
 
     &__slider {
         display: flex;

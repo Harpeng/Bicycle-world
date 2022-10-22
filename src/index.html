@@ -12,6 +12,10 @@
     />
     <title>Bycycle-World</title>
     <link rel="stylesheet" href="./styles/index.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
   </head>
   <body class="page">
     <div class="page__container">
@@ -81,9 +85,9 @@
             </div>
           </div>
         </section>
-        <section class="cover">
-          <div class="cover__slider">
-            <div class="cover__slide">
+        <section class="cover swiper-container">
+          <div class="cover__slider swiper-wrapper">
+            <div class="cover__slide swiper-slide">
               <h2 class="cover__title">Шоссе</h2>
               <p class="cover__text">
                 На шоссейном велосипеде можно ездить по асфальту на разных
@@ -97,7 +101,7 @@
               />
               <div class="cover__icon cover__icon_svg_winding"></div>
             </div>
-            <div class="cover__slide">
+            <div class="cover__slide swiper-slide">
               <h2 class="cover__title cover__is-hidden">Грэвел</h2>
               <p class="cover__text cover__is-hidden">
                 Грэвел похож на шоссейный велосипед, но конструкция рамы немного
@@ -111,7 +115,7 @@
               />
               <div class="cover__icon cover__icon_svg_country"></div>
             </div>
-            <div class="cover__slide">
+            <div class="cover__slide swiper-slide">
               <h2 class="cover__title cover__is-hidden">ТТ</h2>
               <p class="cover__text cover__is-hidden">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком велике только по равнинному асфальту, велик очень быстрые и аэродинамичный.</p>
               <img src="./images/image__road-smooth.png" alt="Картинка прямой дороги" class="cover__img cover__is-hidden" />
@@ -125,5 +129,8 @@
         </section>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./components/utils/slider.js"></script>
+  </body>
   </body>
 </html>
