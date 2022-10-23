@@ -1,0 +1,52 @@
+.tabs {
+
+    &__container {
+
+    }
+
+    &__container {
+
+    }
+
+    &__head-block {
+
+    }
+
+    &__title {
+
+    }
+
+    &__head {
+
+    }
+
+    &__caption {
+
+    }
+
+    &__body {
+        overflow: hidden;
+        list-style-type: none;
+    }
+
+    &__content {
+        display: none;
+        gap: 50px;
+        overflow: hidden;
+
+        &_active {
+            display: block;
+            @include flex();
+        }
+    }
+
+    &__img {
+        @include background();
+        max-width: $bikeImgWidth;
+        width: $percentWidth;
+        max-height: $bikeImgHeight;
+        height: $percentHeight;
+        background-color: $pageColorMain;
+    }
+
+}

@@ -13,9 +13,12 @@
 @import '../styles/mixins/text';
 @import '../styles/mixins/title';
 @import '../styles/mixins/link';
+@import '../styles/mixins/zeroing';
+@import '../styles/mixins/background';
 @import '../styles/blocks/page/page';
 @import '../styles/blocks/header/header';
 @import '../styles/blocks/content/content';
 @import '../styles/blocks/intro/intro';
-@import '../styles/blocks/merks';
+@import '../styles/blocks/merks/merks';
 @import '../styles/blocks/cover/cover';
+@import '../styles/blocks/tabs/tabs';

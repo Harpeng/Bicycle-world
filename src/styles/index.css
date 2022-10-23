@@ -617,6 +617,7 @@ template {
 }
 .merks__quote {
   margin: 0;
+  padding: 0;
   font-size: 2.125em;
   font-weight: 600;
   line-height: 44px;
@@ -624,6 +625,7 @@ template {
 }
 .merks__author-block {
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -642,6 +644,7 @@ template {
 }
 .merks__profession {
   margin: 0;
+  padding: 0;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.75;
@@ -814,4 +817,35 @@ template {
 }
 .cover__button_strelka_right {
   background-image: url(../images/icon__strelka-right.svg);
+}
+
+.tabs__body {
+  overflow: hidden;
+  list-style-type: none;
+}
+.tabs__content {
+  display: none;
+  gap: 50px;
+  overflow: hidden;
+}
+.tabs__content_active {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+}
+.tabs__img {
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 340px;
+  width: 100%;
+  max-height: 340px;
+  height: 100%;
+  background-color: #F4F4F4;
 }/*# sourceMappingURL=index.css.map */

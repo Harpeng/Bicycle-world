@@ -7,7 +7,7 @@
     &__container {
         @include flex();
         gap: 80px;
-        width: 100%;
+        width: $percentWidth;
     }
 
     &__img {
@@ -17,12 +17,12 @@
     }
 
     &__quote-block {
-        max-width: 470px;
+        max-width: $quoteBlock;
         @include flex(column, wrap, space-between);
     }
 
     &__quote {
-        margin: 0;
+        @include zeroing();
         font-size: $fontSizeSecondary;
         font-weight: $fontWeightSecondary;
         line-height: 44px;
@@ -30,7 +30,7 @@
     }
 
     &__author-block {
-        margin: 0;
+        @include zeroing();
         @include flex(column, wrap)
     }
 
@@ -42,7 +42,7 @@
     }
 
     &__profession {
-        margin: 0;
+        @include zeroing();
         font-size: $fontSizeProff;
         font-weight: $fontWeightUtility;
         line-height: $lineHeightSecondary;

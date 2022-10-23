@@ -1,4 +1,4 @@
-let imgSlider = new Swiper('.cover__container-img', {
+const imgSlider = new Swiper('.cover__container-img', {
     navigation: {
         nextEl: '.cover__button_strelka_right',
         prevEl: '.cover__button_strelka_left'
@@ -14,14 +14,14 @@ let imgSlider = new Swiper('.cover__container-img', {
 
     loop: true,
 
-    loopedSlides: 2,
+    loopedSlides: 3,
 
     allowTouchMove:false,
 
 });
 
 
-let textSlider = new Swiper('.cover__container-text', {
+const textSlider = new Swiper('.cover__container-text', {
     navigation: {
         nextEl: '.cover__button_strelka_right',
         prevEl: '.cover__button_strelka_left'
@@ -43,7 +43,7 @@ let textSlider = new Swiper('.cover__container-text', {
 
 });
 
-let iconSlider = new Swiper('.cover__container-icon', {
+const iconSlider = new Swiper('.cover__container-icon', {
     navigation: {
         nextEl: '.cover__button_strelka_right',
         prevEl: '.cover__button_strelka_left'
@@ -69,5 +69,4 @@ let iconSlider = new Swiper('.cover__container-icon', {
 
 });
 
-textSlider.controller.control = imgSlider;
-imgSlider.controller.control = textSlider;
+
