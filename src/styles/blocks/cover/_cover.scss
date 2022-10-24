@@ -2,19 +2,17 @@
     margin: 0 auto;
     min-width: 0;
     @include border-box();
-    max-width: 1440px;
+    max-width: $screen-desktop;
     overflow-x: hidden;
 
     &__container-text {
         @include flex();
-        margin: 0;
-        padding: 0;
+        @include zeroing();
     }
 
     &__wrapper-text {
         max-width: 650px;
-        padding: 0;
-        margin: 0;
+        @include zeroing();
         list-style-type: none;
         @include flex();
     }
@@ -60,7 +58,7 @@
         bottom: 16px;
         left: 0;
         background-color: $buttonColor;
-        z-index: 5;
+        z-index: 1;
         width: 100px;
         height: 40px;
         border-radius: 4px;
@@ -74,26 +72,22 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        margin: 0;
-        padding: 0;
+        @include zeroing();
     }
 
     &__icon-winding {
         background-image: url(../images/icon__road-winding.svg);
-        background-position: center;
-        background-repeat: no-repeat;
+        @include background();
     }
 
     &__icon-country {
         background-image: url(../images/icon__road-country.svg);
-        background-position: center;
-        background-repeat: no-repeat;
+        @include background();
     }
 
     &__icon-smooth {
         background-image: url(../images/icon__road-smooth.svg);
-        background-position: center;
-        background-repeat: no-repeat;
+        @include background();
     }
 
     &__button-block {
@@ -108,7 +102,7 @@
         width: 50px;
         height: 50px;
         background-color: $borderColorStrelka;
-        padding: 0;
+        @include zeroing();
         cursor: pointer;
 
         &_strelka_left {

@@ -1,27 +1,44 @@
 .tabs {
-
     &__container {
-
-    }
-
-    &__container {
-
+        padding: 0;
+        margin-right: 120px;
     }
 
     &__head-block {
-
+        @include flex(row, nowrap, space-between, stretch, center);
+        width: $percentWidth;
     }
 
     &__title {
-
+        max-height: $secondTitleHeight;
+        height: $percentHeight;
+        max-width: $titleWidth;
+        width: $percentWidth;
+        font-size: $fontSizeTitle;
+        line-height: $lineHeightTitle;
+        letter-spacing: $letterSpaceTitle;
+        font-weight: $fontWeightTitle;
+        @include zeroing();
     }
 
     &__head {
-
+        list-style-type: none;
+        @include flex();
+        gap: 40px;
+        @include zeroing();
     }
 
     &__caption {
+        font-size: $fontSizeMain;
+        line-height: $lineHeightSecondary;
+        font-weight: $fontWeightUtility;
+        opacity: 0.7;
+        cursor: pointer;
 
+        &_active {
+            font-weight: $fontWeightSecondary;
+            opacity: 1;
+        }
     }
 
     &__body {
@@ -31,8 +48,9 @@
 
     &__content {
         display: none;
-        gap: 50px;
+        gap: 30px;
         overflow: hidden;
+        @include zeroing();
 
         &_active {
             display: block;
@@ -40,13 +58,40 @@
         }
     }
 
-    &__img {
-        @include background();
+    &__bike-block {
+        @include border-box();
+        margin-top: 120px;
+        margin-bottom: 22px;
+        list-style-type: none;
         max-width: $bikeImgWidth;
         width: $percentWidth;
+    }
+
+    &__img-container {
+        position: relative;
+        background-color: #F4F4F4;
+        box-shadow: 0 20px 140px 0 rgba(0, 0, 0, 0.06);
+        @include border-box();
+        border-radius: 20px;
+        max-width: $bikeImgWidth;
         max-height: $bikeImgHeight;
+        width: $percentWidth;
         height: $percentHeight;
-        background-color: $pageColorMain;
+    }
+
+    &__img {
+        @include background();
+        width: $percentWidth;
+        height: $percentHeight;
+        max-width: $bikeImgWidth;
+        max-height: $bikeImgHeight;
+        object-fit: contain;
+    }
+
+    &__text {
+        font-weight: $fontWeightSecondary;
+        font-size: $lineHeightMain;
+        line-height: $lineHeightSupporting;
     }
 
 }
