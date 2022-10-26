@@ -424,9 +424,6 @@ template {
   padding-left: calc(10px + 110 * (100vw - 320px) / 1120);
   flex: 1 1 auto;
 }
-.content_bike {
-  padding: 0;
-}
 
 .intro {
   display: flex;
