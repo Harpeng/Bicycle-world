@@ -35,9 +35,20 @@
         opacity: 0.7;
         cursor: pointer;
 
+        &:hover {
+            opacity: 0.6;
+            transition: 0.3s linear;
+        }
+
         &_active {
             font-weight: $fontWeightSecondary;
             opacity: 1;
+
+            &:hover {
+                opacity: 0.75;
+                transition: 0.3s linear;
+            }
+
         }
     }
 
@@ -61,7 +72,7 @@
     &__bike-block {
         @include border-box();
         margin-top: 120px;
-        margin-bottom: 22px;
+        margin-bottom: 60px;
         list-style-type: none;
         max-width: $bikeImgWidth;
         width: $percentWidth;
