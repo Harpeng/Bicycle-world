@@ -1034,4 +1034,99 @@ template {
 
 .smooth-scroll {
   scroll-behavior: smooth;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+  background-color: #EFEFEF;
+  box-sizing: border-box;
+  padding: 80px 0 60px 0;
+}
+.footer__form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+  margin: 0;
+  padding: 0;
+}
+.footer__title {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 32px;
+  max-width: 229px;
+  width: 100%;
+  max-height: 64px;
+  height: 100%;
+  margin-bottom: 50px;
+}
+.footer__form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+  width: 360px;
+  height: 50px;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgba(199, 199, 199, 0.5);
+}
+.footer__input {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  width: 322px;
+  height: 50px;
+  background-color: rgba(199, 199, 199, 0.5);
+}
+.footer__input::-moz-placeholder {
+  color: rgb(21, 21, 21);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+  background-color: rgba(199, 199, 199, 0.5);
+}
+.footer__input:-ms-input-placeholder {
+  color: rgb(21, 21, 21);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+  background-color: rgba(199, 199, 199, 0.5);
+}
+.footer__input::placeholder {
+  color: rgb(21, 21, 21);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+  background-color: rgba(199, 199, 199, 0.5);
+}
+.footer__form-button {
+  color: rgb(21, 21, 21);
+  border: none;
+  background-color: rgba(199, 199, 199, 0.5);
+  margin: 0;
+  padding: 0;
+  opacity: 0.7;
+  width: 16px;
+  padding-right: 22px;
+  height: 50px;
 }/*# sourceMappingURL=index.css.map */

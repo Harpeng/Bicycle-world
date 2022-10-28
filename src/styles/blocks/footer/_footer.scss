@@ -1,0 +1,92 @@
+.footer {
+    @include flex();
+    background-color: $pageColorMainFooter;
+    box-sizing: border-box;
+    padding: 80px 0 60px 0;
+
+    &__form-container {
+        @include flex(column);
+        @include zeroing();
+    }
+
+    &__title {
+        @include zeroing();
+        font-weight: $fontWeightSecondary;
+        font-size: $fonSizeTitleFooter;
+        line-height: 32px;
+        max-width: $titleFooterWidth;
+        width: $percentWidth;
+        max-height: $titleFooterHeight;
+        height: $percentHeight;
+        margin-bottom: 50px;
+    }
+
+    &__form {
+        @include flex();
+        width: 360px;
+        height: 50px;
+        border: 1px solid rgba(199, 199, 199, 0.5);
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: $borderColorMainFooter;
+    }
+
+    &__input {
+        border: none;
+        outline: none;
+        @include zeroing();
+        width: 322px;
+        height: 50px;
+        background-color: $borderColorMainFooter;
+        
+        &::placeholder {
+            color: $symbolColorInput;
+            box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+            opacity: 0.7;
+            background-color: $borderColorMainFooter;
+        }
+    }
+
+    &__form-button {
+        color: $symbolColorInput;
+        border: none;
+        background-color: $borderColorMainFooter;
+        @include zeroing();
+        opacity: 0.7;
+        width: 16px;
+        padding-right: 22px;
+        height: 50px;
+    }
+
+    &__logo {
+
+    }
+
+    &__switch-container {
+
+    }
+
+    &__icon {
+
+        &_light {
+
+        }
+
+        &_dark {
+
+        }
+    }
+
+    &__switcher{
+
+    }
+
+    &__switch-input {
+
+    }
+
+    &__slider {
+
+    }
+
+}
