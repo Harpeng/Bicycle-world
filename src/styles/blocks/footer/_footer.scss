@@ -1,8 +1,8 @@
 .footer {
-    @include flex();
+    @include flex(row, nowrap, space-between);
     background-color: $pageColorMainFooter;
     box-sizing: border-box;
-    padding: 80px 0 60px 0;
+    padding: 80px 0 60px 120px;
 
     &__form-container {
         @include flex(column);
@@ -23,70 +23,151 @@
 
     &__form {
         @include flex();
-        width: 360px;
-        height: 50px;
-        border: 1px solid rgba(199, 199, 199, 0.5);
-        border-radius: 4px;
-        box-sizing: border-box;
-        background-color: $borderColorMainFooter;
+        margin-bottom: 100px;
+        border: none;
+        position: relative;
     }
 
     &__input {
-        border: none;
-        outline: none;
-        @include zeroing();
-        width: 322px;
+        box-sizing: border-box;
+        background-color: $pageColorMainFooter;
+        border: 1px solid rgba(199, 199, 199, 0.5);
         height: 50px;
-        background-color: $borderColorMainFooter;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+        @include zeroing();
+        width: 360px;
+        border-radius: 4px;
+        cursor: pointer;
+        opacity: 0.7;
+        outline: none;
+        padding-left: 20px;
         
         &::placeholder {
             color: $symbolColorInput;
-            box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
-            opacity: 0.7;
-            background-color: $borderColorMainFooter;
+            border: none;
+            width: 100%;
+        }
+
+
+        &:focus::-webkit-input-placeholder {
+            opacity: 0; 
+            transition: opacity 0.3s ease;
+            
+        }
+        &:focus::-moz-placeholder {
+            opacity: 0; 
+            transition: opacity 0.3s ease;
+        }
+        &:focus:-moz-placeholder {
+            opacity: 0; 
+            transition: opacity 0.3s ease;
+        }
+        &:focus:-ms-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            color: $symbolColorInput;
+            opacity: 1;
         }
     }
 
     &__form-button {
-        color: $symbolColorInput;
         border: none;
-        background-color: $borderColorMainFooter;
-        @include zeroing();
-        opacity: 0.7;
-        width: 16px;
-        padding-right: 22px;
-        height: 50px;
+        font-weight: $fontWeightMain;
+        font-size: $fontSizeInputIcon;
+        line-height: 27.98px;
+        background-color: transparent;
+        position: absolute;
+        top: 11px;
+        right: 22px;
+        cursor: pointer;
+    }
+
+    &__is_hidden {
+        display: none;
     }
 
     &__logo {
-
+        @include zeroing();
+        font-weight: $fontWeightSecondary;
+        font-size: $fontSizeUtility;
+        line-height: 19.59px;
+        color: rgba(207, 207, 207, 1);
+        max-width: 123px;
+        width: $percentWidth;
     }
 
     &__switch-container {
-
+        margin: 0 122.65px 10px 0;
+        @include flex();
+        align-self: flex-end;
+        gap: 22px;
     }
 
     &__icon {
+        width: 28px;
+        height: 28px;
+        @include background();
 
         &_light {
-
+            background-image: url('../images/icon__white-theme.svg');
         }
 
         &_dark {
-
+            background-image: url('../images/icon__night-theme.svg');
         }
     }
 
     &__switcher{
-
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
     }
 
     &__switch-input {
+        opacity: 0;
+        width: 0;
+        height: 0;
 
+        &:checked + .footer__slider {
+            background-color: $buttonBackColorSecondary;
+          }
+          
+
+        &:checked + :before {
+            -webkit-transform: translateX(20px);
+            -ms-transform: translateX(20px);
+            transform: translateX(20px);
+          }
     }
 
     &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $textColorTitleSecondary;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 9999px;        
 
+        &:before {
+            position: absolute;
+            content: "";
+            top: 2px;
+            left: 2px;
+            height: 20px;
+            width: 20px;
+            background-color: $buttonColor;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+          }
     }
 
 }

@@ -1042,13 +1042,13 @@ template {
   flex-wrap: nowrap;
   align-items: stretch;
   align-content: stretch;
-  justify-content: flex-start;
+  justify-content: space-between;
   justify-items: stretch;
   align-self: auto;
   justify-self: auto;
   background-color: #EFEFEF;
   box-sizing: border-box;
-  padding: 80px 0 60px 0;
+  padding: 80px 0 60px 120px;
 }
 .footer__form-container {
   display: flex;
@@ -1085,48 +1085,150 @@ template {
   justify-items: stretch;
   align-self: auto;
   justify-self: auto;
-  width: 360px;
-  height: 50px;
-  border: 1px solid rgba(199, 199, 199, 0.5);
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: rgba(199, 199, 199, 0.5);
+  margin-bottom: 100px;
+  border: none;
+  position: relative;
 }
 .footer__input {
-  border: none;
-  outline: none;
+  box-sizing: border-box;
+  background-color: #EFEFEF;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+  height: 50px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin: 0;
   padding: 0;
-  width: 322px;
-  height: 50px;
-  background-color: rgba(199, 199, 199, 0.5);
+  width: 360px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  outline: none;
+  padding-left: 20px;
 }
 .footer__input::-moz-placeholder {
   color: rgb(21, 21, 21);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  opacity: 0.7;
-  background-color: rgba(199, 199, 199, 0.5);
+  border: none;
+  width: 100%;
 }
 .footer__input:-ms-input-placeholder {
   color: rgb(21, 21, 21);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  opacity: 0.7;
-  background-color: rgba(199, 199, 199, 0.5);
+  border: none;
+  width: 100%;
 }
 .footer__input::placeholder {
   color: rgb(21, 21, 21);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  opacity: 0.7;
-  background-color: rgba(199, 199, 199, 0.5);
+  border: none;
+  width: 100%;
+}
+.footer__input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__input:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__input:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__input:hover {
+  color: rgb(21, 21, 21);
+  opacity: 1;
 }
 .footer__form-button {
-  color: rgb(21, 21, 21);
   border: none;
-  background-color: rgba(199, 199, 199, 0.5);
+  font-weight: 500;
+  font-size: 0.81em;
+  line-height: 27.98px;
+  background-color: transparent;
+  position: absolute;
+  top: 11px;
+  right: 22px;
+  cursor: pointer;
+}
+.footer__is_hidden {
+  display: none;
+}
+.footer__logo {
   margin: 0;
   padding: 0;
-  opacity: 0.7;
-  width: 16px;
-  padding-right: 22px;
-  height: 50px;
+  font-weight: 600;
+  font-size: 0.875em;
+  line-height: 19.59px;
+  color: rgb(207, 207, 207);
+  max-width: 123px;
+  width: 100%;
+}
+.footer__switch-container {
+  margin: 0 122.65px 10px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
+  align-self: flex-end;
+  gap: 22px;
+}
+.footer__icon {
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.footer__icon_light {
+  background-image: url("../images/icon__white-theme.svg");
+}
+.footer__icon_dark {
+  background-image: url("../images/icon__night-theme.svg");
+}
+.footer__switcher {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.footer__switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.footer__switch-input:checked + .footer__slider {
+  background-color: #545454;
+}
+.footer__switch-input:checked + :before {
+  transform: translateX(20px);
+}
+.footer__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  transition: 0.4s;
+  border-radius: 9999px;
+}
+.footer__slider:before {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: 2px;
+  height: 20px;
+  width: 20px;
+  background-color: #24B47E;
+  transition: 0.4s;
+  border-radius: 50%;
 }/*# sourceMappingURL=index.css.map */
