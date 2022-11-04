@@ -1,11 +1,4 @@
-const enableValidationConfig = {
-  formSelector: ".footer__form",
-  inputSelector: ".footer__input",
-  submitButtonSelector: ".footer__form-button",
-  inactiveButtonClass: "footer__form-button_invalid",
-  inputErrorClass: "footer__input-error",
-  errorClass: "footer__error",
-};
+import { enableValidationConfig } from "./utils";
 
 const showInputError = (errorElement, inputElement, inputErrorClass) => {
   inputElement.classList.add(inputErrorClass);
@@ -88,5 +81,4 @@ export {
   checkInputValidity,
   hideInputError,
   showInputError,
-  enableValidationConfig,
 };

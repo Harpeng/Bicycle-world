@@ -101,6 +101,11 @@
         right: 22px;
         cursor: pointer;
 
+        &_dark-theme {
+            color: $textColorTitleSecondary;
+        }
+
+
         &_invalid:disabled {
             opacity: 0.7;
         }
@@ -133,11 +138,19 @@
         @include background();
 
         &_light {
-            background-image: url('../images/icon__white-theme.svg');
+            background-image: url(../images/icon__white-theme.svg);
+        }
+
+        &_light-night {
+            background-image: url(../images/icon-light_dark-theme.svg);
         }
 
         &_dark {
-            background-image: url('../images/icon__night-theme.svg');
+            background-image: url(../images/icon__night-theme.svg);
+        }
+
+        &_dark-night {
+            background-image: url(../images/icon-night_dark-theme.svg);
         }
     }
 

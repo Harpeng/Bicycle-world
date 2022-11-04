@@ -1,0 +1,26 @@
+.black-theme {
+
+    &__color{
+        background-color: $pageColorSecondary;
+
+        &_footer {
+         background-color: $pageColorSecondaryFooter;   
+        }
+    }
+
+    &_title {
+        background-color: $textColorTitleSecondary;
+    }
+
+    &_text {
+        background-color: $textColorOtherSecondary; 
+    }
+
+    &_text-intro {
+        background-color: $textColorOtherSpecial; 
+    }
+
+    &_logo {
+        background-color: $LogoColorFooterSecondary;
+    }
+}

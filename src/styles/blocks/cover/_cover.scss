@@ -4,6 +4,22 @@
     @include border-box();
     max-width: $screen-desktop;
     overflow-x: hidden;
+    @include flex(column);
+
+
+    &__container-title {
+        @include flex();
+        @include zeroing();
+    }
+
+    &__wrapper-title {
+        list-style-type: none;
+        @include zeroing();
+    }
+
+    &__slider-title {
+        @include zeroing();
+    }
 
     &__container-text {
         @include flex();
@@ -110,8 +126,17 @@
             margin-right: 20px;
         }
 
+        &_strelka_left-night {
+            background-image: url(../images/strelka-left_night.svg);
+            margin-right: 20px;
+        }
+
         &_strelka_right {
             background-image: url(../images/icon__strelka-right.svg);
+        }
+
+        &_strelka_right-night {
+            background-image: url(../images/strelka-right_night.svg);
         }
     }
 
