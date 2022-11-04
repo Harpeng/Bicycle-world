@@ -1,6 +1,6 @@
 .intro {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-between;
     margin-top: 74px;
 
 
@@ -11,27 +11,11 @@
     }
 
     &__title {
-        @include margin(0, 0);
-        padding: 0;
-        height: $titleHeight;
-        max-width: $titleWidth;
-        width: $percentWidth;
-        font-size: $fontSizeTitle;
-        font-weight: $fontWeightTitle;
-        line-height: $lineHeightTitle;
-        letter-spacing: $letterSpaceTitle;
-        white-space: normal;
+        @include title();
     }
 
     &__text {
-        @include margin(0, 0);
-        padding: 0;
-        max-width: $titleWidth;
-        width: $percentWidth;
-        font-weight: $fontWeightUtility;
-        font-size: $fontSizeMain;
-        line-height: $lineHeightSecondary;
-        opacity: 0.7;
+        @include text();
     }
 
     &__button {
@@ -70,6 +54,7 @@
         line-height: $lineHeightMain;
         font-weight: $fontWeightSecondary;
         letter-spacing: $letterSpaceUtility;
+        text-decoration: none;
     }
 
     &__bike-block {
@@ -89,5 +74,48 @@
         width: 132px;
         height: 2px;
         align-self: center;
+    }
+
+    &__pictures {
+        position: relative;
+    }
+
+    &__bike-container {
+        @include border-box();
+        height: 100%;
+        max-height: 430px;
+        max-width: 440px;
+        position: relative;
+        background-color: #F4F4F4;
+        margin-right: calc(10px + (500 - 10) * ((100vw - 320px) / (1440 - 320)));
+        margin-top: 347px;
+    }
+
+    &__bike-fix {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        top: 250px;
+        max-width: calc(440px - 100px);
+        width: $percentWidth;
+        padding: 20px 50px;
+        height: 260px;
+        background-color: $pageColorMain;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        z-index: 2;
+        @include bike-container();
+    }
+
+    &__main-img {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        max-width: $imgLongSize;
+        width: $percentWidth;
+        overflow: hidden;
+        object-fit: cover;
     }
 }

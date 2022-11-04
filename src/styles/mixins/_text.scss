@@ -1,0 +1,11 @@
+@mixin text() {
+    @include margin(0, 0);
+    padding: 0;
+    max-width: $titleWidth;
+    width: $percentWidth;
+    font-weight: $fontWeightUtility;
+    font-size: $fontSizeMain;
+    line-height: $lineHeightSecondary;
+    opacity: 0.7;
+    
+}

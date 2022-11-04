@@ -1,0 +1,143 @@
+.cover{
+    margin: 0 auto;
+    min-width: 0;
+    @include border-box();
+    max-width: $screen-desktop;
+    overflow-x: hidden;
+    @include flex(column);
+
+
+    &__container-title {
+        @include flex();
+        @include zeroing();
+    }
+
+    &__wrapper-title {
+        list-style-type: none;
+        @include zeroing();
+    }
+
+    &__slider-title {
+        @include zeroing();
+    }
+
+    &__container-text {
+        @include flex();
+        @include zeroing();
+    }
+
+    &__wrapper-text {
+        max-width: 650px;
+        @include zeroing();
+        list-style-type: none;
+        @include flex();
+    }
+
+    &__slider-description {
+        @include flex(column);
+        margin-right: 40px;
+    }
+
+    &__title {
+        @include title();
+        max-height: 60px;
+        margin-bottom: 50px;
+        padding-top: 60px;
+    }
+
+    &__text {
+        @include text();
+    }
+
+    &__img-block {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    &__container-img {
+        margin-top: 80px;
+    }
+
+    &__slider-img {
+        @include flex();
+    }
+
+    &__img {
+        max-width: $imgPrimarySize;
+        width: $percentWidth;
+        object-fit: cover;
+        margin-right: 40px;
+    }
+
+    &__container-icon {
+        position: absolute;
+        bottom: 16px;
+        left: 0;
+        background-color: $buttonColor;
+        z-index: 1;
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(-60deg, transparent 16px, $buttonColor 0);
+    }
+
+    &__slider-icon {
+        list-style-type: none;
+        @include flex();
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include zeroing();
+    }
+
+    &__icon-winding {
+        background-image: url(../images/icon__road-winding.svg);
+        @include background();
+    }
+
+    &__icon-country {
+        background-image: url(../images/icon__road-country.svg);
+        @include background();
+    }
+
+    &__icon-smooth {
+        background-image: url(../images/icon__road-smooth.svg);
+        @include background();
+    }
+
+    &__button-block {
+        margin-bottom: 60px;
+    }
+
+    &__button {
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        border: none;
+        width: 50px;
+        height: 50px;
+        background-color: $borderColorStrelka;
+        @include zeroing();
+        cursor: pointer;
+
+        &_strelka_left {
+            background-image: url(../images/icon__strelka-left.svg);
+            margin-right: 20px;
+        }
+
+        &_strelka_left-night {
+            background-image: url(../images/strelka-left_night.svg);
+            margin-right: 20px;
+        }
+
+        &_strelka_right {
+            background-image: url(../images/icon__strelka-right.svg);
+        }
+
+        &_strelka_right-night {
+            background-image: url(../images/strelka-right_night.svg);
+        }
+    }
+
+}
