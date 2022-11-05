@@ -1,12 +1,14 @@
 .tabs {
     &__container {
         padding: 0;
-        margin-right: 120px;
+        box-sizing: border-box;
     }
 
     &__head-block {
         @include flex(row, nowrap, space-between, stretch, center);
         width: $percentWidth;
+        padding-right: calc(10px + (120 - 10) * ((100vw - 320px) / (1440 - 320)));
+        box-sizing: border-box;
     }
 
     &__title {
@@ -62,6 +64,9 @@
         gap: 30px;
         overflow: hidden;
         @include zeroing();
+        padding-right: calc(10px + (120 - 10) * ((100vw - 320px) / (1440 - 320)));
+
+        box-sizing: border-box;
 
         &_active {
             display: block;

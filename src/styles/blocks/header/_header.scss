@@ -10,8 +10,35 @@
     padding-bottom: 28px;
     background-color: $pageColorMain;
 
-    &_theme_night {
-        background-color: $pageColorSecondary;
+    &__menu-icon {
+        display: none;
+
+        @media screen and (max-width: $screen-mobile) {
+            display: block;
+            z-index: 5;
+            position: relative;
+            width: 22px;
+            height: 19px;
+            cursor: pointer;
+
+            &_span {
+                @include burgerLines();
+                top: 50%;
+                transform: scale(1) translate(0px, -50%);
+            }
+
+            &::before {
+                @include burgerLines();
+                content: "";
+                top: 0;
+            }
+
+            &::after {
+                @include burgerLines();
+                content: "";
+                bottom: 0;
+            }
+        }
     }
 
     &__nav {

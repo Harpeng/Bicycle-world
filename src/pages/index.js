@@ -11,7 +11,6 @@ import {
 import {btnSwitch, emailInput, emailButtonInput, emailForm, enableValidationConfig } from "../components/utils.js";
 import {changeTheme} from '../components/switcher.js';
 
-
 tabs();
 // вызов функции табов после загрузки страницы
 document.addEventListener('DOMContentLoaded', tabs);
@@ -30,8 +29,11 @@ const reset = () => {
 
 //функция отправки формы. (конструкцию if используем для предотвращения эффекта размытия и отправки формы)
 const formEmailSubmitHandler = (evt) => {
-  evt.preventDefault();
-
+  if (emailInput.onblur()) {
+    evt.preventDefault();
+  } else {
+    evt.preventDefault();
+  }
  // выводим сообщение в инпут об успешной отправки формы
   emailInput.value = "Круто!";
 
@@ -39,19 +41,10 @@ const formEmailSubmitHandler = (evt) => {
   setTimeout(reset, 5000);
 };
 
-// фунция отправки формы через клавишу enter/return
-const formEmailKeySubmitter = (evt) => {
-  const keyCode = evt.keyCode == 13 && 76;
-if(keyCode && !enableValidationConfig.inactiveButtonClass) {
-    formEmailSubmitHandler(evt);
-  } else  {
-    return false
-  }
-
-}
 
 // клик срабатывает позже события блюр, поэтому выбрано событие mousedown, чтобы была возможность отправить форму
-emailButtonInput.addEventListener('submit', formEmailSubmitHandler);
+emailForm.addEventListener('submit', formEmailSubmitHandler);
+emailButtonInput.addEventListener('mousedown', formEmailSubmitHandler)
 
 // при фокусе инпута удаляется класс скрывающий кнопку отправки формы
 emailInput.onfocus = () => {

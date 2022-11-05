@@ -133,6 +133,7 @@
         margin: 0 122.65px 10px 0;
         @include flex();
         align-self: flex-end;
+        align-items: center;
         gap: 22px;
     }
 
