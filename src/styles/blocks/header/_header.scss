@@ -10,6 +10,10 @@
     padding-bottom: 28px;
     background-color: $pageColorMain;
 
+    &_theme_night {
+        background-color: $pageColorSecondary;
+    }
+
     &__nav {
         @include list-nav();
         gap: 34px;

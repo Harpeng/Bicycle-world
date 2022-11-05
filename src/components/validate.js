@@ -29,6 +29,8 @@ const toggleButtonState = (button, isActive = false, inactiveButtonClass) => {
     button.classList.remove(inactiveButtonClass);
 
     button.disabled = false;
+
+
   } else {
     button.classList.add(inactiveButtonClass);
 
