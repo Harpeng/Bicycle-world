@@ -358,7 +358,7 @@ template {
   position: relative;
   min-height: 100vh;
 }
-.page_theme_black-page {
+.page_theme_night {
   background-color: #333;
 }
 
@@ -381,6 +381,9 @@ template {
   padding-top: 28px;
   padding-bottom: 28px;
   background-color: #F4F4F4;
+}
+.header_theme_night {
+  background-color: #333;
 }
 .header__nav {
   list-style-type: none;
@@ -550,9 +553,11 @@ template {
   max-height: 430px;
   max-width: 440px;
   position: relative;
-  background-color: #F4F4F4;
   margin-right: calc(10px + 490 * (100vw - 320px) / 1120);
   margin-top: 347px;
+}
+.intro__bike-container_white {
+  background-color: #F4F4F4;
 }
 .intro__bike-fix {
   position: -webkit-sticky;
@@ -1091,6 +1096,9 @@ template {
   box-sizing: border-box;
   padding: 80px 0 60px 120px;
 }
+.footer_theme_night {
+  background-color: #2F2F2F;
+}
 .footer__form-container {
   display: flex;
   flex-direction: column;
@@ -1299,4 +1307,30 @@ template {
   background-color: #24B47E;
   transition: 0.4s;
   border-radius: 50%;
+}
+
+.black-theme__color {
+  background-color: #333;
+}
+.black-theme__color_footer {
+  background-color: #2F2F2F;
+}
+.black-theme__color_bright {
+  color: #FFFFFF;
+}
+.black-theme__color_text {
+  color: #E5E5E5;
+}
+.black-theme__color_text-intro {
+  color: #E6E6E6;
+}
+.black-theme__color_logo {
+  color: #565656;
+}
+.black-theme__color_btn-slider {
+  background-color: #434343;
+}
+.black-theme__color_bike-container {
+  background-color: transparent;
+  z-index: -5;
 }/*# sourceMappingURL=index.css.map */

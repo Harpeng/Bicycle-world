@@ -30,11 +30,7 @@ const reset = () => {
 
 //функция отправки формы. (конструкцию if используем для предотвращения эффекта размытия и отправки формы)
 const formEmailSubmitHandler = (evt) => {
-  if (emailInput.onblur()) {
-    evt.preventDefault();
-  } else {
-    evt.preventDefault();
-  }
+  evt.preventDefault();
 
  // выводим сообщение в инпут об успешной отправки формы
   emailInput.value = "Круто!";
@@ -45,18 +41,17 @@ const formEmailSubmitHandler = (evt) => {
 
 // фунция отправки формы через клавишу enter/return
 const formEmailKeySubmitter = (evt) => {
-  if(evt.keyCode == 13 && 76) {
-    formEmailSubmitHandler(evt); 
-  } else {
-    return false;
+  const keyCode = evt.keyCode == 13 && 76;
+if(keyCode && !enableValidationConfig.inactiveButtonClass) {
+    formEmailSubmitHandler(evt);
+  } else  {
+    return false
   }
 
 }
 
-emailForm.addEventListener('keypress', formEmailKeySubmitter);
-
 // клик срабатывает позже события блюр, поэтому выбрано событие mousedown, чтобы была возможность отправить форму
-emailButtonInput.addEventListener('mousedown', formEmailSubmitHandler);
+emailButtonInput.addEventListener('submit', formEmailSubmitHandler);
 
 // при фокусе инпута удаляется класс скрывающий кнопку отправки формы
 emailInput.onfocus = () => {

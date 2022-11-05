@@ -1,26 +1,34 @@
 .black-theme {
+  &__color {
+    background-color: $pageColorSecondary;
 
-    &__color{
-        background-color: $pageColorSecondary;
-
-        &_footer {
-         background-color: $pageColorSecondaryFooter;   
-        }
+    &_footer {
+      background-color: $pageColorSecondaryFooter;
     }
 
-    &_title {
-        background-color: $textColorTitleSecondary;
+    &_bright {
+      color: $textColorTitleSecondary;
     }
 
     &_text {
-        background-color: $textColorOtherSecondary; 
+      color: $textColorOtherSecondary;
     }
 
     &_text-intro {
-        background-color: $textColorOtherSpecial; 
+      color: $textColorOtherSpecial;
     }
 
     &_logo {
-        background-color: $LogoColorFooterSecondary;
+      color: $LogoColorFooterSecondary;
     }
+
+    &_btn-slider {
+      background-color: $IconColorSlider;
+    }
+
+    &_bike-container {
+      background-color: transparent;
+      z-index: -5;
+    }
+  }
 }

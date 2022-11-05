@@ -12,8 +12,8 @@
     />
     <title>Bycycle-World</title>
   </head>
-  <body class="page black-theme black-theme black-theme__color" id="page">
-    <div class="page__container" id="page">
+  <body class="page">
+    <div class="page__container">
       <header class="header">
         <nav class="header__nav">
           <li class="header__li">
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="intro__pictures">
-            <div class="intro__bike-container">
+            <div class="intro__bike-container intro__bike-container_white">
               <img
                 class="intro__bike-fix"
                 src="<%=require('./images/image__bycycle-himod.png')%>"
@@ -358,12 +358,12 @@
         </section>
       </main>
       <footer class="footer" id="footer">
-        <div class="footer__form-container black-theme__color_footer">
+        <div class="footer__form-container">
           <h2 class="footer__title" id="bright">Подпишитесь на рассылку —</h2>
           <form class="footer__form" novalidate>
             <input type="email" id="email" value="" class="footer__input" placeholder="Ваш e-mail" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required minlength="2" maxlength="40" />
             <span class="footer__error" id="email-error" ></span>
-            <button type="submit"  value="отправить" class="footer__form-button footer__is_hidden">ok</button>
+            <button type="button"  value="отправить" class="footer__form-button footer__is_hidden">ok</button>
           </form>
           <p class="footer__logo" id="logo">© Road Club 2021</p>
         </div>

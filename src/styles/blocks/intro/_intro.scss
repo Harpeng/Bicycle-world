@@ -86,9 +86,12 @@
         max-height: 430px;
         max-width: 440px;
         position: relative;
-        background-color: #F4F4F4;
         margin-right: calc(10px + (500 - 10) * ((100vw - 320px) / (1440 - 320)));
         margin-top: 347px;
+
+        &_white {
+            background-color: #F4F4F4;
+        }
     }
 
     &__bike-fix {
