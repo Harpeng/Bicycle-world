@@ -6,6 +6,7 @@
     font-family: $fontFamilyPage;
     background-color: $pageColorMain;
     overflow-x: hidden;
+    height: 100vh;
 
     &__container {
         @include flex(column);
@@ -13,9 +14,10 @@
         width: $percentWidth;
         position: relative;
         min-height: 100vh;
+        @include border-box();
     }
 
-    &_theme_night{
-        background-color: $pageColorSecondary;
+    &__lock {
+        overflow: hidden;
     }
 }

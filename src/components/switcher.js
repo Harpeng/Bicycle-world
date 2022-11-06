@@ -1,4 +1,4 @@
-import {page, footer, logo, mainWhiteElements, textIntro , texts, header , bikeContainer, btnSliders,} from "./utils";
+import {iconMenu, menu, span, page, footer, logo, mainWhiteElements, textIntro , texts, header , bikeContainer, btnSliders,} from "./utils";
 
 const changeTheme = () => {
   mainWhiteElements.forEach((item) => {
@@ -11,7 +11,15 @@ const changeTheme = () => {
 
   page.classList.toggle("black-theme__color");
 
+  iconMenu.classList.toggle("header__menu-icon_white-theme");
+
+  span.classList.toggle("header__menu-icon_span_white-theme");
+
   footer.classList.toggle("black-theme__color_footer");
+
+  menu.classList.toggle("black-theme__color");
+
+  span.classList.toggle("black-theme__color_bright");
 
   header.classList.toggle("black-theme__color");
 

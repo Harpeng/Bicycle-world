@@ -339,6 +339,7 @@ template {
   font-family: "Inter", Arial, sans-serif;
   background-color: #F4F4F4;
   overflow-x: hidden;
+  height: 100vh;
 }
 .page__container {
   display: flex;
@@ -357,9 +358,10 @@ template {
   width: 100%;
   position: relative;
   min-height: 100vh;
+  box-sizing: border-box;
 }
-.page_theme_night {
-  background-color: #333;
+.page__lock {
+  overflow: hidden;
 }
 
 .header {
@@ -381,6 +383,7 @@ template {
   padding-top: 28px;
   padding-bottom: 28px;
   background-color: #F4F4F4;
+  overflow: hidden;
 }
 .header__menu-icon {
   display: none;
@@ -404,6 +407,12 @@ template {
     top: 50%;
     transform: scale(1) translate(0px, -50%);
   }
+  .header__menu-icon_span_active {
+    transform: scale(0) translate(0px, -50%);
+  }
+  .header__menu-icon_span_white-theme {
+    background-color: white;
+  }
   .header__menu-icon::before {
     position: absolute;
     left: 0;
@@ -424,12 +433,72 @@ template {
     content: "";
     bottom: 0;
   }
+  .header__menu-icon_active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+    width: 22px;
+  }
+  .header__menu-icon_active::after {
+    bottom: 46%;
+    transform: rotate(45deg) translate(0, 50%);
+    width: 22px;
+  }
+  .header__menu-icon_white-theme::before {
+    background-color: white;
+  }
+  .header__menu-icon_white-theme::after {
+    background-color: white;
+  }
 }
-.header__nav {
+@media screen and (max-width: 767px) {
+  .header__nav {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #F4F4F4;
+    transition: top 0.3s ease 0s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+    justify-items: stretch;
+    align-self: auto;
+    justify-self: auto;
+  }
+  .header__nav_active {
+    top: 74px;
+  }
+}
+.header__nav-list {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 34px;
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .header__nav-list {
+    margin-top: 70px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: stretch;
+    justify-content: flex-start;
+    justify-items: stretch;
+    align-self: auto;
+    justify-self: auto;
+    gap: 32px;
+    margin-bottom: 0;
+  }
 }
 .header__link {
   text-decoration: none;
@@ -458,10 +527,104 @@ template {
   transition: transform 0.5s ease-in-out;
   z-index: 2;
 }
+@media screen and (max-width: 767px) {
+  .header__link:before {
+    width: 0px;
+  }
+}
 .header__link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
   z-index: 3;
+}
+@media screen and (max-width: 767px) {
+  .header__link {
+    font-size: 1.125em;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+    justify-items: stretch;
+    align-self: auto;
+    justify-self: auto;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__switch-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+    justify-items: stretch;
+    align-self: auto;
+    justify-self: auto;
+    align-self: flex-end;
+    align-items: center;
+    gap: 22px;
+  }
+  .header__icon {
+    width: 28px;
+    height: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .header__icon_dark {
+    background-image: url(../images/icon__night-theme.svg);
+  }
+  .header__icon_light {
+    background-image: url(../images/icon__white-theme.svg);
+  }
+  .header__switcher {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+  .header__switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .header__switch-input:checked + .header__slider {
+    background-color: #545454;
+  }
+  .header__switch-input:checked + ::before {
+    transform: translateX(20px);
+  }
+  .header__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFFFF;
+    transition: 0.4s;
+    border-radius: 9999px;
+  }
+  .header__slider::before {
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    background-color: #24B47E;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+}
+.header__li:last-of-type {
+  margin-top: 316px;
+  display: none;
 }
 
 .content {
@@ -473,7 +636,14 @@ template {
 
 .intro {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
   justify-content: space-between;
+  justify-items: stretch;
+  align-self: auto;
+  justify-self: auto;
   margin-top: 74px;
 }
 .intro__descriptions {
@@ -1262,9 +1432,6 @@ template {
   right: 22px;
   cursor: pointer;
 }
-.footer__form-button_dark-theme {
-  color: #FFFFFF;
-}
 .footer__form-button_invalid:disabled {
   opacity: 0.7;
 }
@@ -1296,6 +1463,11 @@ template {
   align-items: center;
   gap: 22px;
 }
+@media screen and (max-width: 767px) {
+  .footer__switch-container {
+    display: none;
+  }
+}
 .footer__icon {
   width: 28px;
   height: 28px;
@@ -1305,14 +1477,8 @@ template {
 .footer__icon_light {
   background-image: url(../images/icon__white-theme.svg);
 }
-.footer__icon_light-night {
-  background-image: url(../images/icon-light_dark-theme.svg);
-}
 .footer__icon_dark {
   background-image: url(../images/icon__night-theme.svg);
-}
-.footer__icon_dark-night {
-  background-image: url(../images/icon-night_dark-theme.svg);
 }
 .footer__switcher {
   position: relative;
@@ -1360,6 +1526,9 @@ template {
 .black-theme__color_footer {
   background-color: #2F2F2F;
 }
+.black-theme__color_burgerMenu {
+  background-color: #FFFFFF;
+}
 .black-theme__color_bright {
   color: #FFFFFF;
 }
@@ -1376,6 +1545,5 @@ template {
   background-color: #434343;
 }
 .black-theme__color_bike-container {
-  background-color: transparent;
-  z-index: -5;
+  background-color: #333;
 }/*# sourceMappingURL=index.css.map */

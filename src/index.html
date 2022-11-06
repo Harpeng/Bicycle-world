@@ -19,15 +19,29 @@
           <span class="header__menu-icon_span"></span>
         </div>
         <nav class="header__nav">
-          <li class="header__li">
-            <a class="header__link" href="#cover" id="bright">Покрытия и градиенты</a>
-          </li>
-          <li class="header__li">
-            <a class="header__link" href="#bike" id="bright">Велосипеды</a>
-          </li>
-          <li class="header__li">
-            <a class="header__link" href="#train" id="bright">Тренировки</a>
-          </li>
+          <ul class="header__nav-list">
+            <li class="header__li">
+              <a class="header__link" href="#cover" id="bright"
+                >Покрытия и градиенты</a
+              >
+            </li>
+            <li class="header__li">
+              <a class="header__link" href="#bike" id="bright">Велосипеды</a>
+            </li>
+            <li class="header__li">
+              <a class="header__link" href="#train" id="bright">Тренировки</a>
+            </li>
+            <li class="header__li">
+              <div class="header__switch-container">
+                <div class="header__icon header__icon_light"></div>
+                <label class="header__switcher">
+                  <input type="checkbox" class="header__switch-input" />
+                  <span class="header__slider"></span>
+                </label>
+                <div class="header__icon header__icon_dark"></div>
+              </div>
+            </li>
+          </ul>
         </nav>
       </header>
       <main class="content">
@@ -151,8 +165,14 @@
             </div>
           </div>
           <div class="cover__button-block">
-            <button class="cover__button cover__button_strelka_left" id="button-slider-left"></button>
-            <button class="cover__button cover__button_strelka_right" id="button-slider-right"></button>
+            <button
+              class="cover__button cover__button_strelka_left"
+              id="button-slider-left"
+            ></button>
+            <button
+              class="cover__button cover__button_strelka_right"
+              id="button-slider-right"
+            ></button>
           </div>
         </section>
         <section class="tabs" id="bike">
@@ -167,8 +187,12 @@
                 >
                   Шоссе
                 </li>
-                <li class="tabs__caption" data-tab="gravel" id="bright">Грэвел</li>
-                <li class="tabs__caption" data-tab="triathlon" id="bright">ТТ</li>
+                <li class="tabs__caption" data-tab="gravel" id="bright">
+                  Грэвел
+                </li>
+                <li class="tabs__caption" data-tab="triathlon" id="bright">
+                  ТТ
+                </li>
               </ul>
             </div>
             <div class="tabs__body">
@@ -203,7 +227,9 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">Cannondale Systemsix Himod</p>
+                  <p class="tabs__text" id="bright">
+                    Cannondale Systemsix Himod
+                  </p>
                 </li>
                 <li class="tabs__bike-block">
                   <div class="tabs__img-container">
@@ -253,7 +279,9 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">Specialized S-Works Diverge</p>
+                  <p class="tabs__text" id="bright">
+                    Specialized S-Works Diverge
+                  </p>
                 </li>
                 <li class="tabs__bike-block">
                   <div class="tabs__img-container">
@@ -269,7 +297,9 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">Cannondale Topstone Lefty 3</p>
+                  <p class="tabs__text" id="bright">
+                    Cannondale Topstone Lefty 3
+                  </p>
                 </li>
               </ul>
               <ul class="tabs__content" data-tab="triathlon">
@@ -364,9 +394,26 @@
         <div class="footer__form-container">
           <h2 class="footer__title" id="bright">Подпишитесь на рассылку —</h2>
           <form class="footer__form" novalidate>
-            <input type="email" id="email" value="" class="footer__input" placeholder="Ваш e-mail" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required minlength="2" maxlength="40" />
-            <span class="footer__error" id="email-error" ></span>
-            <button type="submit"  value="отправить" class="footer__form-button footer__is_hidden">ok</button>
+            <input
+              type="email"
+              id="email"
+              value=""
+              class="footer__input"
+              placeholder="Ваш e-mail"
+              name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              required
+              minlength="2"
+              maxlength="40"
+            />
+            <span class="footer__error" id="email-error"></span>
+            <button
+              type="submit"
+              value="отправить"
+              class="footer__form-button footer__is_hidden"
+            >
+              ok
+            </button>
           </form>
           <p class="footer__logo" id="logo">© Road Club 2021</p>
         </div>

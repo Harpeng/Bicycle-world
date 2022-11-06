@@ -1,6 +1,5 @@
 .intro {
-    display: flex;
-    justify-content: space-between;
+    @include flex(row, nowrap, space-between);
     margin-top: 74px;
 
 

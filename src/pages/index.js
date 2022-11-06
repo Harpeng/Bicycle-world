@@ -8,8 +8,15 @@ import {
   hideValidity,
   toggleButtonState,
 } from "../components/validate.js";
-import {btnSwitch, emailInput, emailButtonInput, emailForm, enableValidationConfig } from "../components/utils.js";
+import {btnSwitchHeader, btnSwitch, emailInput, emailButtonInput, emailForm, enableValidationConfig } from "../components/utils.js";
 import {changeTheme} from '../components/switcher.js';
+import {openBurgerMenu, openBurgerMenuLinks} from '../components/menuBurger';
+
+// вызов функции на открытие бургер меню 
+openBurgerMenu();
+
+// вызов функции закрытия бургера при переходе по ссылке в меню
+openBurgerMenuLinks();
 
 tabs();
 // вызов функции табов после загрузки страницы
@@ -66,3 +73,4 @@ emailInput.onblur = () => {
 
 
 btnSwitch.addEventListener('click', changeTheme);
+btnSwitchHeader.addEventListener('click', changeTheme);

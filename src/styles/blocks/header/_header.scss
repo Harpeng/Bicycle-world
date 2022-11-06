@@ -9,6 +9,8 @@
     padding-top: 28px;
     padding-bottom: 28px;
     background-color: $pageColorMain;
+    overflow: hidden;
+
 
     &__menu-icon {
         display: none;
@@ -21,10 +23,19 @@
             height: 19px;
             cursor: pointer;
 
+
             &_span {
                 @include burgerLines();
                 top: 50%;
                 transform: scale(1) translate(0px, -50%);
+
+                &_active {
+                    transform: scale(0) translate(0px, -50%);
+                }
+
+                &_white-theme {
+                    @include whiteBurgerLines();
+                }
             }
 
             &::before {
@@ -38,12 +49,70 @@
                 content: "";
                 bottom: 0;
             }
+
+            &_active {
+
+                &::before {
+                    top: 50%;
+                    transform: rotate(-45deg) translate(0, -50%);
+                    width: 22px;
+                }
+
+                &::after {
+                    bottom: 46%;
+                    transform: rotate(45deg) translate(0, 50%);
+                    width: 22px;
+                }
+            }
+
+            &_white-theme {
+
+                &::before {
+                    @include whiteBurgerLines();
+                }
+    
+                &::after {
+                    @include whiteBurgerLines();
+                }
+            }
         }
     }
 
     &__nav {
+
+        @media screen and (max-width: $screen-mobile) {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: $pageColorMain;
+            transition: top 0.3s ease 0s;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            @include flex(column);
+
+            &_active {
+                top: 74px;
+            }
+          }
+
+
+    }
+
+    &__nav-list {
         @include list-nav();
         gap: 34px;
+        margin: 0;
+
+        @media screen and (max-width: $screen-mobile) {
+            margin-top: 70px;
+            list-style-type: none;
+            @include flex(column, nowrap, flex-start, stretch, center);
+            gap: 32px;
+            margin-bottom: 0;
+        }
     }
 
     &__link {
@@ -72,6 +141,10 @@
             transform: scaleX(0);
             transition: transform .5s ease-in-out;
             z-index: 2;
+
+            @media screen and (max-width: $screen-mobile) {
+                width: 0px;
+            }
           }
           
           &:hover::before {
@@ -79,5 +152,67 @@
             transform: scaleX(1);
             z-index: 3;
           }
+
+          @media screen and (max-width: $screen-mobile) {
+            font-size: $fontSizeMain;
+            text-align: center;
+            @include flex();
+            justify-self: center;
+            align-self: center;
+            justify-content: center;
+          }
+
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+        &__switch-container {
+
+            @include switch-container();
+        }
+    
+        &__icon {
+            @include icon();
+
+            &_dark {
+                @include icon-dark();
+            }
+
+            &_light {
+                @include icon-light();    
+            }
+            
+        }
+
+        &__switcher {
+            @include switcher();      
+        }
+
+        &__switch-input {
+            @include switch-input();
+
+            &:checked + .header__slider {
+                @include switch-input-checked-element();
+            }
+
+            &:checked + ::before {
+                @include switch-input-checked-before();
+            }
+
+        }
+        &__slider {
+            @include slider();    
+
+            &::before {
+                @include slider-before(); 
+            }
+        }
+    }
+
+    &__li {
+
+        &:last-of-type {
+            margin-top: 316px;
+            display: none;
+        }
     }
 }

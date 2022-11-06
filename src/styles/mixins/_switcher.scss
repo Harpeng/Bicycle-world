@@ -1,0 +1,71 @@
+@mixin switch-container() {
+    @include flex();
+    align-self: flex-end;
+    align-items: center;
+    gap: 22px;
+}
+
+@mixin icon() {
+    width: 28px;
+    height: 28px;
+    @include background();
+}
+
+@mixin icon-light() {
+    background-image: url(../images/icon__white-theme.svg);
+}
+
+@mixin icon-dark() {
+    background-image: url(../images/icon__night-theme.svg);
+}
+
+@mixin switch-input() {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+@mixin switcher() {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+@mixin switch-input-checked-element() {
+    background-color: $buttonBackColorSecondary;
+}
+
+@mixin switch-input-checked-before() {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+@mixin slider() {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $textColorTitleSecondary;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 9999px;  
+}
+
+@mixin slider-before() {
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    background-color: $buttonColor;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+

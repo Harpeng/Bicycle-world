@@ -105,10 +105,6 @@
         right: 22px;
         cursor: pointer;
 
-        &_dark-theme {
-            color: $textColorTitleSecondary;
-        }
-
 
         &_invalid:disabled {
             opacity: 0.7;
@@ -131,81 +127,47 @@
 
     &__switch-container {
         margin: 0 122.65px 10px 0;
-        @include flex();
-        align-self: flex-end;
-        align-items: center;
-        gap: 22px;
+        @include switch-container();
+
+        @media screen and (max-width: $screen-mobile) {
+            display: none;
+        }
     }
 
     &__icon {
-        width: 28px;
-        height: 28px;
-        @include background();
+        @include icon();
 
         &_light {
-            background-image: url(../images/icon__white-theme.svg);
-        }
-
-        &_light-night {
-            background-image: url(../images/icon-light_dark-theme.svg);
+            @include icon-light();
         }
 
         &_dark {
-            background-image: url(../images/icon__night-theme.svg);
-        }
-
-        &_dark-night {
-            background-image: url(../images/icon-night_dark-theme.svg);
+            @include icon-dark();
         }
     }
 
     &__switcher{
-        position: relative;
-        display: inline-block;
-        width: 44px;
-        height: 24px;
+        @include switcher();
     }
 
     &__switch-input {
-        opacity: 0;
-        width: 0;
-        height: 0;
+        @include switch-input();
 
         &:checked + .footer__slider {
-            background-color: $buttonBackColorSecondary;
+            @include switch-input-checked-element();
           }
           
 
         &:checked + :before {
-            -webkit-transform: translateX(20px);
-            -ms-transform: translateX(20px);
-            transform: translateX(20px);
+            @include switch-input-checked-before();
           }
     }
 
     &__slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: $textColorTitleSecondary;
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 9999px;        
+        @include slider();     
 
         &:before {
-            position: absolute;
-            content: "";
-            top: 2px;
-            left: 2px;
-            height: 20px;
-            width: 20px;
-            background-color: $buttonColor;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 50%;
+            @include slider-before();   
           }
     }
 
