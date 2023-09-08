@@ -4,8 +4,8 @@
     max-width: $titleWidth;
     width: $percentWidth;
     font-weight: $fontWeightUtility;
-    font-size: $fontSizeMain;
-    line-height: $lineHeightSecondary;
+    font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(18px + (28 - 18) * ((100vw - 320px) / (1440 - 320)));
     opacity: 0.7;
     
 }

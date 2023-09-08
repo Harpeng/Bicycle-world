@@ -46,22 +46,18 @@
       </header>
       <main class="content">
         <section class="intro">
-          <div class="intro__lead">
-            <div class="intro__descriptions">
-              <h1 class="intro__title" id="bright">Шоссе, ТТ и Грэвел</h1>
-              <p class="intro__text" id="text-intro">
-                Триатлонные старты, горные серпантины или грейвел заезды по
-                живописным маршрутам – нужно только определиться с выбором
-                велосипеда и отправиться в путь.
-              </p>
-              <button type="button" class="intro__button button">
-                <a href="#bike" class="intro__button-link">Подробнее</a>
-              </button>
-            </div>
-            <div class="intro__bike-block">
-              <p class="intro__bike-name" id="bright">Cannondale Systemsix</p>
-              <div class="intro__icon-line"></div>
-            </div>
+          <h1 class="intro__title" id="bright">Шоссе, ТТ и Грэвел</h1>
+          <p class="intro__text" id="text-intro">
+            Триатлонные старты, горные серпантины или грейвел заезды по
+            живописным маршрутам – нужно только определиться с выбором
+            велосипеда и отправиться в путь.
+          </p>
+          <button type="button" class="intro__button button">
+            <a href="#bike" class="intro__button-link">Подробнее</a>
+          </button>
+          <div class="intro__bike-block">
+            <p class="intro__bike-name" id="bright">Cannondale Systemsix</p>
+            <div class="intro__icon-line"></div>
           </div>
           <div class="intro__pictures">
             <div class="intro__bike-container intro__bike-container_white">
@@ -98,7 +94,7 @@
           </div>
         </section>
         <section class="cover" id="cover">
-          <div class="cover__container-title swiper-container">
+          <div class="cover__container-title swiper-container" id="text">
             <ul class="cover__wrapper-title swiper-wrapper">
               <li class="cover__slider-title swiper-slide">
                 <h2 class="cover__title" id="bright">Шоссе</h2>
@@ -111,7 +107,7 @@
               </li>
             </ul>
           </div>
-          <div class="cover__container-text swiper-container">
+          <div class="cover__container-text swiper-container" id="text">
             <ul class="cover__wrapper-text swiper-wrapper">
               <li class="cover__slider-description swiper-slide">
                 <p class="cover__text" id="text">
@@ -195,60 +191,104 @@
                 </li>
               </ul>
             </div>
+            <form class="tabs__select">
+              <svg
+                viewBox="0 0 12 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="tabs__select-arrow"
+              >
+                <path d="M1 1L6 5.5L11 0.999999" stroke-width="1.2" />
+              </svg>
+              <select class="tabs__select-options" id="dropDown">
+                <option
+                  class="tabs__select-option tabs__select-selected"
+                  value="highway"
+                  data-select="highway"
+                >
+                  Шоссе
+                </option>
+                <option
+                  class="tabs__select-option"
+                  value="gravel"
+                  data-select="gravel"
+                >
+                  Грэввел
+                </option>
+                <option
+                  class="tabs__select-option"
+                  value="triathlon"
+                  data-select="triathlon"
+                >
+                  ТТ
+                </option>
+              </select>
+            </form>
             <div class="tabs__body">
-              <ul class="tabs__content tabs__content_active" data-tab="highway">
-                <li class="tabs__bike-block">
-                  <div class="tabs__img-container">
-                    <a
-                      href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN"
-                      target="_blank"
-                      class="tabs__link"
-                    >
-                      <img
-                        src="<%=require('./images/image__bycycle-Caledonia.png')%>"
-                        alt="шоссейные велосипеды"
-                        class="tabs__img"
-                      />
-                    </a>
-                  </div>
-                  <p class="tabs__text" id="bright">Cervelo Caledonia-5</p>
-                </li>
-                <li class="tabs__bike-block">
-                  <div class="tabs__img-container">
-                    <a
-                      href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J"
-                      target="_blank"
-                      class="tabs__link"
-                    >
-                      <img
-                        src="<%=require('./images/image__bycycle-himod.png')%>"
-                        alt="шоссейные велосипеды"
-                        class="tabs__img"
-                      />
-                    </a>
-                  </div>
-                  <p class="tabs__text" id="bright">
-                    Cannondale Systemsix Himod
-                  </p>
-                </li>
-                <li class="tabs__bike-block">
-                  <div class="tabs__img-container">
-                    <a
-                      href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF"
-                      target="_blank"
-                      class="tabs__link"
-                    >
-                      <img
-                        src="<%=require('./images/image__bycycle-sl.png')%>"
-                        alt="шоссейные велосипеды"
-                        class="tabs__img"
-                      />
-                    </a>
-                  </div>
-                  <p class="tabs__text" id="bright">Trek Domane SL-7</p>
-                </li>
-              </ul>
-              <ul class="tabs__content" data-tab="gravel">
+              <div class="tabs__swipe swiper-container mySwipe ">
+                <ul
+                  class="tabs__content tabs__content_active swiper-wrapper"
+                  data-tab="highway"
+                  id="highway"
+                >
+                  <li class="tabs__bike-block swiper-slide ">
+                    <div class="tabs__img-container">
+                      <a
+                        href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN"
+                        target="_blank"
+                        class="tabs__link"
+                      >
+                        <img
+                          src="<%=require('./images/image__bycycle-Caledonia.png')%>"
+                          alt="шоссейные велосипеды"
+                          class="tabs__img"
+                        />
+                      </a>
+                    </div>
+                    <p class="tabs__text" id="bike-name">Cervelo Caledonia-5</p>
+                  </li>
+                  <li   class="tabs__bike-block swiper-slide ">
+                    <div class="tabs__img-container">
+                      <a
+                        href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J"
+                        target="_blank"
+                        class="tabs__link"
+                      >
+                        <img
+                          src="<%=require('./images/image__bycycle-himod.png')%>"
+                          alt="шоссейные велосипеды"
+                          class="tabs__img"
+                        />
+                      </a>
+                    </div>
+                    <p class="tabs__text" id="bike-name">
+                      Cannondale Systemsix Himod
+                    </p>
+                  </li>
+                  <li class="tabs__bike-block swiper-slide" >
+                    <div class="tabs__img-container">
+                      <a
+                        href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF"
+                        target="_blank"
+                        class="tabs__link"
+                      >
+                        <img
+                          src="<%=require('./images/image__bycycle-sl.png')%>"
+                          alt="шоссейные велосипеды"
+                          class="tabs__img"
+                        />
+                      </a>
+                    </div>
+                    <p class="tabs__text" id="bike-name">Trek Domane SL-7</p>
+                  </li>
+                </ul>
+                <div class="tabs__pagination swiper-pagination"></div>
+              </div>
+              <ul
+                class="tabs__content"
+                data-tab="gravel"
+                id="gravel"
+              >
                 <li class="tabs__bike-block">
                   <div class="tabs__img-container">
                     <a
@@ -263,9 +303,11 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">Cervelo Aspero GRX 810</p>
+                  <p class="tabs__text" id="bike-name">
+                    Cervelo Aspero GRX 810
+                  </p>
                 </li>
-                <li class="tabs__bike-block">
+                <li class="tabs__bike-block ">
                   <div class="tabs__img-container">
                     <a
                       href="https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9"
@@ -279,11 +321,11 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">
+                  <p class="tabs__text" id="bike-name">
                     Specialized S-Works Diverge
                   </p>
                 </li>
-                <li class="tabs__bike-block">
+                <li class="tabs__bike-block ">
                   <div class="tabs__img-container">
                     <a
                       href="https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8"
@@ -297,13 +339,17 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">
+                  <p class="tabs__text" id="bike-name">
                     Cannondale Topstone Lefty 3
                   </p>
                 </li>
               </ul>
-              <ul class="tabs__content" data-tab="triathlon">
-                <li class="tabs__bike-block">
+              <ul
+                class="tabs__content "
+                data-tab="triathlon"
+                id="triathlon"
+              >
+                <li class="tabs__bike-block ">
                   <div class="tabs__img-container">
                     <a
                       href="https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9"
@@ -317,9 +363,11 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">Specialized S-Works Shiv</p>
+                  <p class="tabs__text" id="bike-name">
+                    Specialized S-Works Shiv
+                  </p>
                 </li>
-                <li class="tabs__bike-block">
+                <li class="tabs__bike-block ">
                   <div class="tabs__img-container">
                     <a
                       href="https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835"
@@ -333,9 +381,11 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">BMC Timemachine 01 ONE</p>
+                  <p class="tabs__text" id="bike-name">
+                    BMC Timemachine 01 ONE
+                  </p>
                 </li>
-                <li class="tabs__bike-block">
+                <li class="tabs__bike-block ">
                   <div class="tabs__img-container">
                     <a
                       href="https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q"
@@ -349,7 +399,7 @@
                       />
                     </a>
                   </div>
-                  <p class="tabs__text" id="bright">Cervelo P-Series</p>
+                  <p class="tabs__text" id="bike-name">Cervelo P-Series</p>
                 </li>
               </ul>
             </div>

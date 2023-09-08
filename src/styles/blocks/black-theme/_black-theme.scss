@@ -6,10 +6,6 @@
       background-color: $pageColorSecondaryFooter;
     }
 
-    &_burgerMenu{
-      background-color: $textColorTitleSecondary;
-    }
-
     &_bright {
       color: $textColorTitleSecondary;
     }
@@ -33,5 +29,10 @@
     &_bike-container {
       background-color: $pageColorSecondary;
     }
+
+    &_bike-names {
+      color: $textColorTitleMain;
+    }
+    
   }
 }

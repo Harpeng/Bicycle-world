@@ -1,7 +1,6 @@
 .content {
     @include border-box();
     width: $percentWidth;
-    padding-left: calc(10px + (120 - 10) * ((100vw - 320px) / (1440 - 320)));
+    padding-left: calc(18px + (120 - 18) * ((100vw - 320px) / (1440 - 320)));
     flex: 1 1 auto;
-    
 }

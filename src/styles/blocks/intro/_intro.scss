@@ -1,123 +1,311 @@
 .intro {
-    @include flex(row, nowrap, space-between);
-    margin-top: 74px;
+  display: grid;
+  grid-template-areas:
+    "title image"
+    "text image"
+    "button image"
+    "bike image"
+    ". image";
+  grid-template-columns: minmax(200px, 460px) minmax(300px, 810px);
+  padding-top: 74px;
 
+  @media screen and (max-width: $screen-mobile) {
+    grid-template-areas:
+      "title"
+      "image"
+      "text"
+      "button";
+    margin-top: 0;
+    margin-right: calc(18 / 320 * 100%);
+    grid-template-columns: 1fr;
+  }
 
-    &__descriptions {
-        @include flex(column);
-        gap: 50px;
-        @include margin(80px, 0, 0, 0);
+  &__title {
+    @include title();
+    grid-area: title;
+    margin-top: 80px;
+
+    @media screen and (max-width: $screen-laptop) {
+      max-width: $titleWidthLaptop;
+      font-size: $fontSizeLaptop;
+      line-height: $lineHeightTitleLaptop;
     }
 
-    &__title {
-        @include title();
+    @media screen and (max-width: $screen-tablet) {
+      max-width: $generalWidthLow;
+      font-size: $fontSizeTablet;
     }
 
-    &__text {
-        @include text();
+    @media screen and (max-width: $screen-mobile) {
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
 
-    &__button {
-        background-color: $buttonColor;
-        padding: 16px 10px;
-        max-width: $buttonWidth;
-        border-radius: 4px;
-        position: relative;
-        @include border-box();
-        cursor: pointer;
-        @include margin(0, 0, 167px, 0);
-        border: none;
-        text-align: center;
 
-        &:before {
-            content:'';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 50px;
-            background-color: $buttonColorHover;
-            transition: all 1s ease;
-        }
+  }
 
-        &:hover:before {
-            width: $percentWidth;
-        }
+  &__text {
+    @include text();
+    grid-area: text;
+    margin-top: 42px;
+
+    @media screen and (max-width: $screen-laptop) {
+      max-width: 360px;
+      font-size: 15px;
+      line-height: 18px;
     }
 
-    &__button-link {
-        color: $textColorTitleSecondary;
-        z-index: 4;
-        position: relative;
-        font-size: $fontSizeUtility;
-        line-height: $lineHeightMain;
-        font-weight: $fontWeightSecondary;
-        letter-spacing: $letterSpaceUtility;
-        text-decoration: none;
+    @media screen and (max-width: $screen-tablet) {
+      max-width: 284px;
+      font-size: 12px;
+      line-height: 18px;
     }
 
-    &__bike-block {
-        @include flex();
-        gap: 30px;
+    @media screen and (max-width: $screen-mobile) {
+        margin-top: 210px;
+        max-width: $percentWidth;
+      }
+
+      @media screen and (max-width: $screen-mobile-low) {
+        margin-top: 60px;
+      }
+
+      @media screen and (max-width: 430px) {
+        max-width: $generalWidthLow;
+        justify-self: baseline;
+      }
+
+
+  }
+
+  &__button {
+    background-color: $buttonColor;
+    padding: 16px 10px;
+    max-width: $buttonWidth;
+    width: $percentWidth;
+    border-radius: 4px;
+    position: relative;
+    @include border-box();
+    cursor: pointer;
+    @include margin(50px, 0, 167px, 0);
+    border: none;
+    text-align: center;
+    grid-area: button;
+
+
+    @media screen and (max-width: $screen-laptop) {
+      @include margin(50px, 0, 80px, 0);
     }
 
-    &__bike-name {
-        @include margin(0, 0, 0, 0);
-        font-size: $fontSizeMain;
-        line-height: $lineHeightMain;
-        font-weight: $fontWeightUtility;
+    @media screen and (max-width: $screen-mobile) {
+      max-width: 284px;
+      justify-self: center;
+      margin-top: 40px;
     }
 
-    &__icon-line {
-        background-image: url('../images/icon_line.svg');
-        width: 132px;
-        height: 2px;
-        align-self: center;
+    @media screen and (max-width: 430px) {
+      justify-self: baseline;
     }
 
-    &__pictures {
-        position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 50px;
+      background-color: $buttonColorHover;
+      transition: all 1s ease;
     }
 
-    &__bike-container {
-        @include border-box();
-        height: 100%;
-        max-height: 430px;
-        max-width: 440px;
-        position: relative;
-        margin-right: calc(10px + (500 - 10) * ((100vw - 320px) / (1440 - 320)));
-        margin-top: 347px;
+    &:hover:before {
+      width: $percentWidth;
+    }
+  }
 
-        &_white {
-            background-color: #F4F4F4;
-        }
+  &__button-link {
+    color: $textColorTitleSecondary;
+    z-index: 4;
+    position: relative;
+    font-size: $fontSizeUtility;
+    line-height: $lineHeightMain;
+    font-weight: $fontWeightSecondary;
+    letter-spacing: $letterSpaceUtility;
+    text-decoration: none;
+  }
+
+  &__bike-block {
+    @include flex();
+    gap: 30px;
+    grid-area: bike;
+  }
+
+  &__bike-name {
+    @include margin(0, 0, 0, 0);
+    font-size: $fontSizeMain;
+    line-height: $lineHeightMain;
+    font-weight: $fontWeightUtility;
+
+    @media screen and (max-width: $screen-laptop) {
+      font-size: 14px;
     }
 
-    &__bike-fix {
-        position: -webkit-sticky;
-        position: -moz-sticky;
-        position: -ms-sticky;
-        position: -o-sticky;
-        position: sticky;
-        top: 250px;
-        max-width: calc(440px - 100px);
-        width: $percentWidth;
-        padding: 20px 50px;
-        height: 260px;
-        background-color: $pageColorMain;
-        background-repeat: no-repeat;
+    @media screen and (max-width: $screen-tablet) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+      display: none;
+    }
+  }
+
+  &__icon-line {
+    background-image: url("../images/icon_line.svg");
+    width: 132px;
+    height: 2px;
+    align-self: center;
+
+    @media screen and (max-width: $screen-laptop) {
+      width: 100px;
+    }
+
+    @media screen and (max-width: $screen-tablet) {
+      width: 50px;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+      display: none;
+    }
+  }
+
+  &__pictures {
+    position: relative;
+    grid-area: image;
+
+
+    @media screen and (max-width: $screen-tablet) {
+      max-width: 444px;
+      max-height: 450px;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+      justify-self: center;
+    }
+
+    @media screen and (max-width: 388px) {
+      justify-self: baseline;
+    }
+
+
+
+  }
+
+  &__bike-container {
+    @include border-box();
+    height: 100%;
+    max-height: 430px;
+    max-width: 440px;
+    position: relative;
+    // margin-right: calc(10px + (500 - 10) * ((100vw - 320px) / (1440 - 320)));
+    margin-right: 40vw;
+    margin-top: 347px;
+
+    @media screen and (max-width: $screen-laptop) {
+      max-height: 320px;
+      margin-top: 300px;
+    }
+
+    @media screen and (max-width: $screen-tablet) {
+      max-height: 260px;
+      margin-top: 280px;
+      margin-right: 155vw;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+        max-height: 300px;
+        margin-top: 200px;
+      }
+
+      @media screen and (max-width: $screen-mobile-low) {
+        margin-right: 0px;
+        margin-top: 150px;
+        max-height: 160px;
+      }
+
+    &_white {
+      background-color: #f4f4f4;
+    }
+  }
+
+  &__bike-fix {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 250px;
+    max-width: 340px;
+    width: $percentWidth;
+    padding: 20px 50px;
+    height: 260px;
+    background-color: $pageColorMain;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    z-index: 2;
+    @include bike-container();
+
+    @media screen and (max-width: $screen-laptop) {
+      max-width: 234px;
+      height: 200px;
+      padding: 11px 27px;
+      object-fit: contain;
+    }
+
+    @media screen and (max-width: $screen-tablet) {
+      width: 234px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+        width: 180px;
+        height: 138px;
         object-fit: cover;
-        z-index: 2;
-        @include bike-container();
+      }
+
+      @media screen and (max-width: $screen-mobile-low) {
+        margin-right: 50px;
+      }
+  }
+
+  &__main-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: $imgLongSize;
+    width: $percentWidth;
+    overflow: hidden;
+    object-fit: cover;
+
+    @media screen and (max-width: $screen-laptop) {
+      max-width: 510px;
+      max-height: 636px;
     }
 
-    &__main-img {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        max-width: $imgLongSize;
-        width: $percentWidth;
-        overflow: hidden;
-        object-fit: cover;
+    @media screen and (max-width: $screen-tablet) {
+      max-width: 410px;
     }
+
+    @media screen and (max-width: $screen-mobile) {
+      max-width: 391px;
+    }
+
+    @media screen and (max-width: $screen-mobile-low) {
+      max-width: 254px;
+      max-height: 348px;
+      justify-self: start;
+    }
+
+  }
 }

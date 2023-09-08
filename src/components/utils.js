@@ -16,9 +16,12 @@ const logo = document.querySelector(".footer__logo");
 const mainWhiteElements = document.querySelectorAll("#bright");
 const textIntro = document.querySelector(".intro__text");
 const texts = document.querySelectorAll("#text");
+const coverText = document.querySelector(".cover__text");
 const header = document.querySelector(".header");
 const bikeContainer = document.querySelector(".intro__bike-container");
 const btnSliders = document.querySelectorAll(".cover__button");
+const bikeNames = document.querySelectorAll("#bike-name");
+const bikes = document.querySelectorAll(".tabs__text")
 
 
 // переменные для бургер меню
@@ -38,4 +41,6 @@ const enableValidationConfig = {
   };
 
 
-export {btnSwitchHeader, menuLinks,iconMenu, menu, span, page, footer, logo, mainWhiteElements, textIntro , texts, header , bikeContainer, btnSliders, btnSwitch, head, body, emailInput, emailButtonInput, emailForm, enableValidationConfig};
+
+
+export {coverText, bikes,bikeNames,btnSwitchHeader, menuLinks,iconMenu, menu, span, page, footer, logo, mainWhiteElements, textIntro , texts, header, bikeContainer, btnSliders, btnSwitch, head, body, emailInput, emailButtonInput, emailForm, enableValidationConfig};

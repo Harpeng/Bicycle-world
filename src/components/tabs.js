@@ -1,9 +1,11 @@
 import {head, body} from './utils.js';
 
+
 const tabs = () => {
 const getActiveTabName = () => {
   // объявляем функцию для получения названия активной вкладки
   return head.querySelector(".tabs__caption_active").dataset.tab; // возвращаем значение data-tab активной кнопки
+
 };
 
 const setActiveContent = () => {
@@ -49,5 +51,8 @@ const activateCaption = (e) => {
 };
 
 head.addEventListener("click", activateCaption);
+
 }
+
+
 export {tabs};

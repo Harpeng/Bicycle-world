@@ -50,7 +50,7 @@ module: {
           // Добавьте postcss-loader
           // Добавьте sass-loader
         'postcss-loader',
-        'sass-loader'
+        'sass-loader',
     ]
       }, 
       ]

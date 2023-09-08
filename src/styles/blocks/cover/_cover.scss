@@ -1,15 +1,27 @@
-.cover{
+.cover {
     margin: 0 auto;
     min-width: 0;
     @include border-box();
     max-width: $screen-desktop;
     overflow-x: hidden;
     @include flex(column);
+    box-sizing: border-box;
+
+    @media screen and (max-width: $screen-mobile) {
+        position: relative;
+        margin-right: calc(18/320 * 100%);
+        border-top: 1px solid #E3E3E3;
+      }
 
 
     &__container-title {
         @include flex();
         @include zeroing();
+        box-sizing: border-box;
+
+        @media screen and (max-width: $screen-mobile) {
+            order: -1;
+      }
     }
 
     &__wrapper-title {
@@ -24,6 +36,15 @@
     &__container-text {
         @include flex();
         @include zeroing();
+
+        @media screen and (max-width: $screen-mobile) {
+            order: 3;
+            margin-bottom: 80px;
+      }
+
+      @media screen and (max-width: 470px) {
+        max-width: 284px;
+  }
     }
 
     &__wrapper-text {
@@ -43,23 +64,47 @@
         max-height: 60px;
         margin-bottom: 50px;
         padding-top: 60px;
+
+        @media screen and (max-width: $screen-mobile) {
+            order: 2;
+            margin-bottom: 0;
+            padding-top: 40px;
+      }
     }
 
     &__text {
         @include text();
+
     }
 
     &__img-block {
         position: relative;
         margin-bottom: 50px;
+
+        @media screen and (max-width: $screen-mobile) {
+            order: 2;
+            margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: 470px) {
+        max-width: calc(284px + (438 - 284) * ((100vw - 320px) / (470 - 320)));
+        width: $percentWidth;
+      }
+
     }
 
     &__container-img {
         margin-top: 80px;
+
+
+        @media screen and (max-width: $screen-mobile) {
+            margin-top: 40px;
+      }
     }
 
     &__slider-img {
         @include flex();
+
     }
 
     &__img {
@@ -80,6 +125,14 @@
         border-radius: 4px;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         background: linear-gradient(-60deg, transparent 16px, $buttonColor 0);
+
+
+        @media screen and (max-width: $screen-mobile) {
+            max-width: calc(70px + (30 + 30 * .7) * (100vw - 320px) / 770);
+            bottom: 14px;
+      }
+
+
     }
 
     &__slider-icon {
@@ -94,20 +147,42 @@
     &__icon-winding {
         background-image: url(../images/icon__road-winding.svg);
         @include background();
+
+        @media screen and (max-width: $screen-mobile) {
+            width: 75px;
+      }
     }
 
     &__icon-country {
         background-image: url(../images/icon__road-country.svg);
         @include background();
+
+        @media screen and (max-width: $screen-mobile) {
+            width: 75px;
+      }
     }
 
     &__icon-smooth {
         background-image: url(../images/icon__road-smooth.svg);
         @include background();
+
+        @media screen and (max-width: $screen-mobile) {
+            width: 75px;
+      }
     }
 
     &__button-block {
         margin-bottom: 60px;
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: $screen-mobile) {
+            position: absolute;
+            top: 50px;
+            left: calc(220px + (330 + 330 * .7) * (100vw - 320px) / 766);
+            margin-right: 18px;
+      }
+
     }
 
     &__button {
@@ -120,23 +195,33 @@
         background-color: $borderColorStrelka;
         @include zeroing();
         cursor: pointer;
+        z-index: 10;
+
+        @media screen and (max-width: $screen-mobile) {
+            width: calc(24px + (50 - 24) * ((100vw - 320px) / (766 - 320)));
+            height: calc(24px + (50 - 24) * ((100vw - 320px) / (766 - 320)));
+      }
 
         &_strelka_left {
             background-image: url(../images/icon__strelka-left.svg);
             margin-right: 20px;
+            z-index: 50;
         }
 
         &_strelka_left-night {
             background-image: url(../images/strelka-left_night.svg);
             margin-right: 20px;
+            z-index: 50;
         }
 
         &_strelka_right {
             background-image: url(../images/icon__strelka-right.svg);
+            z-index: 50;
         }
 
         &_strelka_right-night {
             background-image: url(../images/strelka-right_night.svg);
+            z-index: 50;
         }
     }
 

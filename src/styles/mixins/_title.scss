@@ -3,9 +3,9 @@
     padding: 0;
     max-width: $titleWidth;
     width: $percentWidth;
-    font-size: $fontSizeTitle;
+    font-size: calc(32px + (55 - 32) * ((100vw - 320px) / (1440 - 320)));
     font-weight: $fontWeightTitle;
-    line-height: $lineHeightTitle;
+    line-height: calc(40px + (60 - 40) * ((100vw - 320px) / (1440 - 320)));
     letter-spacing: $letterSpaceTitle;
     white-space: normal;
 }

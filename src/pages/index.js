@@ -2,15 +2,33 @@ import '../styles/index.scss';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import {tabs} from '../components/tabs.js';
-import {imgSlider, titleSlider, textSlider, iconSlider} from '../components/slider.js';
+import {selector} from '../components/selector';
+import {imgSlider, titleSlider, textSlider, iconSlider, bikeSlider} from '../components/slider.js';
 import {
   enableValidation,
   hideValidity,
   toggleButtonState,
 } from "../components/validate.js";
 import {btnSwitchHeader, btnSwitch, emailInput, emailButtonInput, emailForm, enableValidationConfig } from "../components/utils.js";
-import {changeTheme} from '../components/switcher.js';
+import {enableDarkMode, disableDarkMode, bikeChanger,bikeChangerRevers} from '../components/switcher.js';
 import {openBurgerMenu, openBurgerMenuLinks} from '../components/menuBurger';
+
+
+
+import {body} from '../components/utils.js';
+
+
+const mobileWidthMediaQuery = window.matchMedia('(max-width: 766px)');
+const laptopWidthMediaQuery = window.matchMedia('(min-width: 767px)');
+
+const widthChange = () => {
+  if(mobileWidthMediaQuery) {
+    bikeChanger();
+  } else if(laptopWidthMediaQuery) {
+    bikeChangerRevers();
+  }
+}
+
 
 // вызов функции на открытие бургер меню 
 openBurgerMenu();
@@ -19,8 +37,10 @@ openBurgerMenu();
 openBurgerMenuLinks();
 
 tabs();
+selector();
 // вызов функции табов после загрузки страницы
 document.addEventListener('DOMContentLoaded', tabs);
+document.addEventListener('DOMContentLoaded', widthChange);
 
 // запускаем валидацию формы
 enableValidation(enableValidationConfig);
@@ -71,6 +91,26 @@ emailInput.onblur = () => {
   hideValidity(emailForm);
 };
 
+let darkMode = localStorage.getItem("dark-mode");
 
-btnSwitch.addEventListener('click', changeTheme);
-btnSwitchHeader.addEventListener('click', changeTheme);
+if(darkMode === "enabled") {
+  enableDarkMode();
+}
+
+
+btnSwitch.addEventListener('click', (e) => {
+  darkMode = localStorage.getItem("dark-mode");
+  if(darkMode === "disabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
+btnSwitchHeader.addEventListener('click', (e) => {
+  darkMode = localStorage.getItem("dark-mode");
+  if(darkMode === "disabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
